@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="cordova-plugin-accountkit"
+    version="1.0.0">
+    <name>Cordova AccountKit</name>
+    <description></description>
+    <license>MIT</license>
+    <keywords></keywords>
+    <repo>https://github.com/gurisko/cordova-plugin-accountkit.git</repo>
+    <issue>https://github.com/gurisko/cordova-plugin-accountkit/issues</issue>
+
+    <!-- ios -->
+    <platform name="ios">
+        <js-module src="www/plugin.js" name="plugin">
+            <runs/>
+            <clobbers target="AccountKitPlugin" />
+        </js-module>
+        <config-file target="config.xml" parent="/*">
+            <feature name="AccountKitPlugin">
+                <param name="ios-package" value="AccountKitPlugin" onload="true" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/AccountKitPlugin.h" />
+        <source-file src="src/ios/AccountKitPlugin.m" />
+
+        <!-- Facebook framework -->
+        <framework src="src/ios/AccountKit.framework" custom="true" />
+    </platform>
+</plugin>
