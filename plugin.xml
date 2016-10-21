@@ -10,6 +10,68 @@
     <repo>https://github.com/gurisko/cordova-plugin-accountkit.git</repo>
     <issue>https://github.com/gurisko/cordova-plugin-accountkit/issues</issue>
 
+    <preference name="APP_ID" />
+    <preference name="APP_NAME" />
+    <preference name="CLIENT_TOKEN" />
+
+    <engines>
+        <engine name="cordova-android" version=">=3.5.0" />
+        <engine name="cordova-ios" version=">=3.5.0" />
+    </engines>
+
+    <!-- android -->
+    <platform name="android">
+        <js-module src="www/plugin.js" name="plugin">
+            <runs/>
+            <clobbers target="AccountKitPlugin" />
+        </js-module>
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AccountKitPlugin">
+                <param name="android-package" value="org.apache.cordova.facebook.AccountKitPlugin" />
+                <param name="onload" value="true" />
+            </feature>
+            <access origin="https://m.facebook.com" />
+            <access origin="https://graph.facebook.com" />
+            <access origin="https://api.facebook.com" />
+            <access origin="https://*.fbcdn.net" />
+            <access origin="https://*.akamaihd.net" />
+            <preference name="android-minSdkVersion" value="15" />
+        </config-file>
+
+        <source-file src="src/android/accountkit.xml" target-dir="res/values" />
+        <config-file target="res/values/accountkit.xml" parent="/*">
+            <string name="fb_app_name">$APP_NAME</string>
+            <string name="fb_app_id">$APP_ID</string>
+            <string name="accountkit_token">$CLIENT_TOKEN</string>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="application">
+            <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/fb_app_id" />
+            <meta-data android:name="com.facebook.accountkit.ApplicationName" android:value="@string/fb_app_name" />
+            <meta-data android:name="com.facebook.accountkit.ClientToken" android:value="@string/accountkit_token" />
+            <!--
+            <meta-data android:name="com.facebook.accountkit.FacebookAppEventsEnabled" android:value="false"/>
+            -->
+
+            <uses-permission android:name="android.permission.RECEIVE_SMS" />
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+            <activity android:name="com.facebook.accountkit.ui.AccountKitActivity">
+                <intent-filter>
+                    <action android:name="android.intent.action.VIEW" />
+                    <category android:name="android.intent.category.DEFAULT" />
+                    <category android:name="android.intent.category.BROWSABLE" />
+                    <data android:scheme="ak$APP_ID" />
+                </intent-filter>
+            </activity>
+        </config-file>
+
+        <framework src="com.facebook.android:account-kit-sdk:4.16.+"/>
+
+        <source-file src="src/android/AccountKitPlugin.java" target-dir="src/org/apache/cordova/facebook" />
+    </platform>
+
     <!-- ios -->
     <platform name="ios">
         <js-module src="www/plugin.js" name="plugin">
@@ -20,6 +82,11 @@
             <feature name="AccountKitPlugin">
                 <param name="ios-package" value="AccountKitPlugin" onload="true" />
             </feature>
+            <access origin="https://m.facebook.com" />
+            <access origin="https://graph.facebook.com" />
+            <access origin="https://api.facebook.com" />
+            <access origin="https://*.fbcdn.net" />
+            <access origin="https://*.akamaihd.net" />
         </config-file>
 
         <header-file src="src/ios/AccountKitPlugin.h" />
