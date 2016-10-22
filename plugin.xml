@@ -49,9 +49,7 @@
             <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/fb_app_id" />
             <meta-data android:name="com.facebook.accountkit.ApplicationName" android:value="@string/fb_app_name" />
             <meta-data android:name="com.facebook.accountkit.ClientToken" android:value="@string/accountkit_token" />
-            <!--
             <meta-data android:name="com.facebook.accountkit.FacebookAppEventsEnabled" android:value="false"/>
-            -->
 
             <uses-permission android:name="android.permission.RECEIVE_SMS" />
             <uses-permission android:name="android.permission.READ_PHONE_STATE" />
@@ -92,7 +90,32 @@
         <header-file src="src/ios/AccountKitPlugin.h" />
         <source-file src="src/ios/AccountKitPlugin.m" />
 
+
+        <config-file target="*-Info.plist" parent="FacebookAppID">
+            <string>$APP_ID</string>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="AccountKitClientToken">
+            <string>$CLIENT_TOKEN</string>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="CFBundleURLTypes">
+          <array>
+            <dict>
+              <key>CFBundleURLSchemes</key>
+              <array>
+                <string>ak$APP_ID</string>
+              </array>
+            </dict>
+          </array>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="AccountKitFacebookAppEventsEnabled">
+            <string>0</string>
+        </config-file>
+
         <!-- Facebook framework -->
         <framework src="src/ios/AccountKit.framework" custom="true" />
+        <resource-file src="src/ios/AccountKitStrings.bundle" />
     </platform>
 </plugin>
