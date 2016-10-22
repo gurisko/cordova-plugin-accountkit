@@ -51,10 +51,6 @@
             <meta-data android:name="com.facebook.accountkit.ClientToken" android:value="@string/accountkit_token" />
             <meta-data android:name="com.facebook.accountkit.FacebookAppEventsEnabled" android:value="false"/>
 
-            <uses-permission android:name="android.permission.RECEIVE_SMS" />
-            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-            <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-
             <activity android:name="com.facebook.accountkit.ui.AccountKitActivity">
                 <intent-filter>
                     <action android:name="android.intent.action.VIEW" />
