@@ -74,7 +74,7 @@
         </js-module>
         <config-file target="config.xml" parent="/*">
             <feature name="AccountKitPlugin">
-                <param name="ios-package" value="AccountKitPlugin" onload="true" />
+                <param name="ios-package" value="AKPlugin" onload="true" />
             </feature>
             <access origin="https://m.facebook.com" />
             <access origin="https://graph.facebook.com" />
@@ -83,9 +83,10 @@
             <access origin="https://*.akamaihd.net" />
         </config-file>
 
-        <header-file src="src/ios/AccountKitPlugin.h" />
-        <source-file src="src/ios/AccountKitPlugin.m" />
-
+        <header-file src="src/ios/AKPlugin.h" />
+        <source-file src="src/ios/AKPlugin.m" />
+        <header-file src="src/ios/AKPluginViewController.h" />
+        <source-file src="src/ios/AKPluginViewController.m" />
 
         <config-file target="*-Info.plist" parent="FacebookAppID">
             <string>$APP_ID</string>
@@ -112,6 +113,6 @@
 
         <!-- Facebook framework -->
         <framework src="src/ios/AccountKit.framework" custom="true" />
-        <resource-file src="src/ios/AccountKitStrings.bundle" />
+        <resource-file src="src/ios/AccountKitStrings.bundle" custom="true" />
     </platform>
 </plugin>
