@@ -29,4 +29,37 @@ It is recommended to add these permission to `config.xml` of your Cordova projec
 
 ## API
 
-*(in progress)*
+### Login
+
+`accountKitPlugin.loginWithEmail(Function success, Function failure)`
+`accountKitPlugin.loginWithPhoneNumber(Function success, Function failure)`
+
+Success function returns an Object like:
+
+	{
+		accountId: "<string>",
+		applicationId: "<string>",
+		token: "<long string>",
+		lastRefresh: 1451606400,
+		refreshInterval: 2592000
+	}
+
+Failure function returns an error String.
+
+### Logout
+
+`accountKitPlugin.logout()`
+
+### Get access token
+
+`accountKitPlugin.getAccessToken(Function success, Function failure)`
+
+Success function returns an Object like:
+
+	{
+		accountId: "<string>",
+		applicationId: "<string>",
+		token: "<long string>",
+		lastRefresh: 1451606400,
+		refreshInterval: 2592000
+	}
