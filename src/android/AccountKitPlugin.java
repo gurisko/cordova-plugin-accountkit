@@ -140,7 +140,7 @@ public class AccountKitPlugin extends CordovaPlugin {
     result.put("accountId", accessToken.getAccountId());
     result.put("applicationId", accessToken.getApplicationId());
     result.put("token", accessToken.getToken());
-    result.put("lastRefresh", accessToken.getLastRefresh().getTime() * 1000);
+    result.put("lastRefresh", accessToken.getLastRefresh().getTime());
     result.put("refreshInterval", accessToken.getTokenRefreshIntervalSeconds());
     return result;
   }
