@@ -98,15 +98,13 @@ public class AccountKitPlugin extends CordovaPlugin {
     cordova.startActivityForResult(this, intent, APP_REQUEST_CODE);
   }
 
-  @Override
-  public void onActivityResult(int requestCode, int resultCode, Intent data) {
-    super.onActivityResult(requestCode, resultCode, data);
-
-    if (requestCode != APP_REQUEST_CODE) {
+  public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+    // Sometimes intent is null what crashes the app. This is a workaround rather than a solution.
+    if (requestCode != APP_REQUEST_CODE || intent == null) {
       return;
     }
 
-    AccountKitLoginResult loginResult = data.getParcelableExtra(AccountKitLoginResult.RESULT_KEY);
+    AccountKitLoginResult loginResult = intent.getParcelableExtra(AccountKitLoginResult.RESULT_KEY);
     if (loginResult.getError() != null) {
       loginContext.error(loginResult.getError().getErrorType().getMessage());
 
