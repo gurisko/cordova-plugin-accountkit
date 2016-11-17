@@ -31,8 +31,8 @@ It is recommended to add these permission to `config.xml` of your Cordova projec
 
 ### Login
 
-`accountKitPlugin.loginWithEmail(Function success, Function failure)`
-`accountKitPlugin.loginWithPhoneNumber(Function success, Function failure)`
+`AccountKitPlugin.loginWithEmail(Function success, Function failure)`
+`AccountKitPlugin.loginWithPhoneNumber(Function success, Function failure)`
 
 Success function returns an Object like:
 
@@ -48,11 +48,11 @@ Failure function returns an error String.
 
 ### Logout
 
-`accountKitPlugin.logout()`
+`AccountKitPlugin.logout()`
 
 ### Get access token
 
-`accountKitPlugin.getAccessToken(Function success, Function failure)`
+`AccountKitPlugin.getAccessToken(Function success, Function failure)`
 
 Success function returns an Object like:
 
