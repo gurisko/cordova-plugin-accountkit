@@ -20,86 +20,87 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/*!
- @abstract The AccountKit error domain for server errors (underlying errors).
+/**
+  The AccountKit error domain for server errors (underlying errors).
  */
 extern NSString *const AKFServerErrorDomain;
 
-/*!
- @typedef AKFServerErrorCode
+/**
+ AKFServerErrorCode
 
- @abstract Detail error codes for server errors.
+  Detail error codes for server errors.
  */
 typedef NS_ENUM(NSInteger, AKFServerErrorCode)
 {
-  /*!
-   @abstract An invalid parameter value was found.
+  /**
+    An invalid parameter value was found.
 
-   @discussion The SDK does not know how to handle this parameter value from the server.
+
+ The SDK does not know how to handle this parameter value from the server.
    */
   AKFInvalidServerParameterValueError = 201,
 };
 
-/*!
- @typedef AKFLoginRequestInvalidatedErrorCode
+/**
+ AKFLoginRequestInvalidatedErrorCode
 
- @abstract Detail error codes for login request invalidated errors.
+  Detail error codes for login request invalidated errors.
  */
 typedef NS_ENUM(NSInteger, AKFLoginRequestInvalidatedErrorCode)
 {
-  /*!
-   @abstract The request has expired without completing.
+  /**
+    The request has expired without completing.
    */
   AKFLoginRequestExpiredError = 301,
 };
 
-/*!
- @typedef AKFInvalidParameterValueErrorCode
+/**
+ AKFInvalidParameterValueErrorCode
 
- @abstract Detail error codes for invalid parameter errors.
+  Detail error codes for invalid parameter errors.
  */
 typedef NS_ENUM(NSInteger, AKFInvalidParameterValueErrorCode)
 {
-  /*!
-   @abstract The email address value is invalid.
+  /**
+    The email address value is invalid.
    */
   AKFInvalidEmailAddressError = 401,
 
-  /*!
-   @abstract The phone number value is invalid.
+  /**
+    The phone number value is invalid.
    */
   AKFInvalidPhoneNumberError = 402,
 
-  /*!
-   @abstract The value is not of the appropriate type for NSCoding.
+  /**
+    The value is not of the appropriate type for NSCoding.
    */
   AKFInvalidCodingValueError = 403,
 
-  /*!
-   @abstract No valid access token is available.
+  /**
+    No valid access token is available.
    */
   AKFInvalidAccessTokenError = 404,
 
-  /*!
-   @abstract The key for account preferences is invalid.
+  /**
+    The key for account preferences is invalid.
    */
   AKFInvalidAccountPreferenceKeyError = 405,
 
-  /*!
-   @abstract The value for account preferences is invalid.
+  /**
+    The value for account preferences is invalid.
    */
   AKFInvalidAccountPreferenceValueError = 406,
 
-  /*!
-   @abstract The operation was not successful.
+  /**
+    The operation was not successful.
    */
   AKFOperationNotSuccessful = 407,
 };
 
-/*!
- @typedef AKFServerResponseErrorCode
+/**
+ AKFServerResponseErrorCode
 
- @abstract Detail error codes for server response errors.
+  Detail error codes for server response errors.
  */
 typedef NS_ENUM(NSInteger, AKFServerResponseErrorCode)
 {

@@ -22,106 +22,113 @@
 #import <AccountKit/AKFLoginFlowState.h>
 #import <AccountKit/AKFTextPosition.h>
 
-/*!
+NS_ASSUME_NONNULL_BEGIN
+
+/**
  @protocol
 
- @abstract A controller that exposes actions to the AKFAdvancedUIManager
+  A controller that exposes actions to the AKFAdvancedUIManager
  */
 @protocol AKFAdvancedUIActionController <NSObject>
 
-/*!
- @abstract Triggers a pop of the current state.
+/**
+  Triggers a pop of the current state.
  */
 - (void)back;
 
-/*!
- @abstract Triggers the login flow to cancel.
+/**
+  Triggers the login flow to cancel.
  */
 - (void)cancel;
 
 @end
 
-/*!
+/**
  @protocol
 
- @abstract Manager for advanced UI configuration.
+  Manager for advanced UI configuration.
  */
 @protocol AKFAdvancedUIManager <NSObject>
 
 @optional
 
-/*!
- @abstract Returns a custom view to use above the scrollable content.
+/**
+  Returns a custom view to use above the scrollable content.
 
- @param state the current state of the login flow
+ - Parameter state: the current state of the login flow
 
- @return a View or null for the default view
+ - Returns: a View or null for the default view
  */
 - (nullable UIView *)actionBarViewForState:(AKFLoginFlowState)state;
 
-/*!
- @abstract Returns a custom view for the body in the middle of the scrollable container.
+/**
+  Returns a custom view for the body in the middle of the scrollable container.
 
- @param state the current state of the login flow
+ - Parameter state: the current state of the login flow
 
- @return a View or null for the default view
+ - Returns: a View or null for the default view
  */
 - (nullable UIView *)bodyViewForState:(AKFLoginFlowState)state;
 
-/*!
- @abstract Returns the button type for the given login state.
+/**
+  Returns the button type for the given login state.
 
- @discussion This method is only called for PhoneLogin, EmailLogin and ConfirmationCode states.
 
- @param state the current state of the login flow
+ This method is only called for PhoneLogin, EmailLogin and ConfirmationCode states.
 
- @return the button type for the state
+ - Parameter state: the current state of the login flow
+
+ - Returns: the button type for the state
  */
 - (AKFButtonType)buttonTypeForState:(AKFLoginFlowState)state;
 
-/*!
- @abstract Returns a custom view for the bottom of the content in the scrollable container.
+/**
+  Returns a custom view for the bottom of the content in the scrollable container.
 
- @param state the current state of the login flow
+ - Parameter state: the current state of the login flow
 
- @return a View or null for the default view
+ - Returns: a View or null for the default view
  */
 - (nullable UIView *)footerViewForState:(AKFLoginFlowState)state;
 
-/*!
- @abstract Returns a custom view for the top of the content in the scrollable container.
+/**
+  Returns a custom view for the top of the content in the scrollable container.
 
- @param state the current state of the login flow
+ - Parameter state: the current state of the login flow
 
- @return a View or null for the default view
+ - Returns: a View or null for the default view
  */
 - (nullable UIView *)headerViewForState:(AKFLoginFlowState)state;
 
-/*!
- @abstract Provides a controller for the receiver that can send messages back to the current controller.
+/**
+  Provides a controller for the receiver that can send messages back to the current controller.
 
- @discussion This method will be called before any views are retrieved.
 
- @param actionController the action controller
+ This method will be called before any views are retrieved.
+
+ - Parameter actionController: the action controller
  */
 - (void)setActionController:(nonnull id<AKFAdvancedUIActionController>)actionController;
 
-/*!
- @abstract Called when an error is encountered and should be displayed in the UI.
+/**
+  Called when an error is encountered and should be displayed in the UI.
 
- @discussion This method will be called before the views are retrieved.
 
- @param error the error
+ This method will be called before the views are retrieved.
+
+ - Parameter error: the error
  */
 - (void)setError:(nonnull NSError *)error;
 
-/*!
- @abstract Returns the position of the text relative to the content body view.
+/**
+  Returns the position of the text relative to the content body view.
 
- @param state the current state of the login flow
+ - Parameter state: the current state of the login flow
 
- @return a text position
+ - Returns: a text position
  */
 - (AKFTextPosition)textPositionForState:(AKFLoginFlowState)state;
 
 @end
+
+NS_ASSUME_NONNULL_END

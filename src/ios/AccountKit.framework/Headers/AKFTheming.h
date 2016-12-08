@@ -22,10 +22,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-/*!
+/**
  @protocol
 
- @abstract The receiver can be themed.
+  The receiver can be themed.
  */
 @protocol AKFTheming
 

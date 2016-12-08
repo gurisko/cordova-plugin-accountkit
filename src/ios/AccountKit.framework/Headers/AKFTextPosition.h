@@ -18,24 +18,24 @@
 
 #import <Foundation/Foundation.h>
 
-/*!
- @typedef AKFTextPosition
+/**
+ AKFTextPosition
 
- @abstract Specifies the position of the text component relative to the body component.
+  Specifies the position of the text component relative to the body component.
  */
 typedef NS_ENUM(NSUInteger, AKFTextPosition) {
-  /*!
-   @abstract The default text position will be used.
+  /**
+    The default text position will be used.
    */
   AKFTextPositionDefault = 0,
 
-  /*!
-   @abstract Places the text above the body.
+  /**
+    Places the text above the body.
    */
   AKFTextPositionAboveBody,
 
-  /*!
-   @abstract Places the text below the body.
+  /**
+    Places the text below the body.
    */
   AKFTextPositionBelowBody,
 };

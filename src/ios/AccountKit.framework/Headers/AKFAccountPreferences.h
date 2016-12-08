@@ -24,51 +24,55 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol AKFAccountPreferencesDelegate;
 
-/*!
- @abstract Accesses Account preferences that are stored on the Account Kit servers for the associated app and account.
+/**
+  Accesses Account preferences that are stored on the Account Kit servers for the associated app and account.
 
- @discussion Get an instance of this class through AKFAccountKit `accountPreferences`
+
+ Get an instance of this class through AKFAccountKit `accountPreferences`
  */
 @interface AKFAccountPreferences : NSObject
 
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
 
-/*!
- @abstract A delegate for the AKFAccountPreferences object.
+/**
+  A delegate for the AKFAccountPreferences object.
  */
 @property (nonatomic, weak) id<AKFAccountPreferencesDelegate> delegate;
 
-/*!
- @abstract Deletes a single preference.
+/**
+  Deletes a single preference.
 
- @param key The key for the preference.
+ - Parameter key: The key for the preference.
  */
 - (void)deletePreferenceForKey:(NSString *)key;
 
-/*!
- @abstract Loads a single preference.
+/**
+  Loads a single preference.
 
- @param key The key for the preference.
+ - Parameter key: The key for the preference.
 
- @discussion The loaded preference is sent to the delegate after it has loaded.
+
+ The loaded preference is sent to the delegate after it has loaded.
  */
 - (void)loadPreferenceForKey:(NSString *)key;
 
-/*!
- @abstract Loads all preferences.
+/**
+  Loads all preferences.
 
- @discussion The loaded preferences are sent to the delegate after they are loaded.
+
+ The loaded preferences are sent to the delegate after they are loaded.
  */
 - (void)loadPreferences;
 
-/*!
- @abstract Writes a single preference.
+/**
+  Writes a single preference.
 
- @param key The key for the preference.
- @param value The value for the preference.
+ - Parameter key: The key for the preference.
+ - Parameter value: The value for the preference.
 
- @discussion Setting a value of null will instead invoke `deletePreferenceForKey:`.  Any existing value will be
+
+ Setting a value of null will instead invoke `deletePreferenceForKey:`.  Any existing value will be
  overwritten.
  Keys must be ASCII letters, digits or the underscore character and be 1-100 characters in length.
  Values must be 1-1000 characters in length.
@@ -77,57 +81,57 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-/*!
+/**
  @protocol
 
- @abstract The delegate the receives messages from `AKFAccountPreferences`.
+  The delegate the receives messages from `AKFAccountPreferences`.
  */
 @protocol AKFAccountPreferencesDelegate <NSObject>
 
 @optional
 
-/*!
- @abstract Notifies the delegate that a single preference was deleted.
+/**
+  Notifies the delegate that a single preference was deleted.
 
- @param accountPreferences The AKFAccountPreferences instance that deleted the preference.
- @param key The key for the deleted preference.
- @param error The error if the preference could not be deleted.
+ - Parameter accountPreferences: The AKFAccountPreferences instance that deleted the preference.
+ - Parameter key: The key for the deleted preference.
+ - Parameter error: The error if the preference could not be deleted.
  */
 - (void)accountPreferences:(AKFAccountPreferences *)accountPreferences
  didDeletePreferenceForKey:(NSString *)key
                      error:(nullable NSError *)error;
 
-/*!
- @abstract Notifies the delegate that preferences were loaded.
+/**
+  Notifies the delegate that preferences were loaded.
 
- @param accountPreferences The AKFAccountPreferences instance that loaded the preferences.
- @param preferences The dictionary of preferences.
- @param error The error if the preferences could not be loaded.
+ - Parameter accountPreferences: The AKFAccountPreferences instance that loaded the preferences.
+ - Parameter preferences: The dictionary of preferences.
+ - Parameter error: The error if the preferences could not be loaded.
  */
 - (void)accountPreferences:(AKFAccountPreferences *)accountPreferences
         didLoadPreferences:(nullable NSDictionary<NSString *, NSString *> *)preferences
                      error:(nullable NSError *)error;
 
-/*!
- @abstract Notifies the delegate that a single preference was loaded.
+/**
+  Notifies the delegate that a single preference was loaded.
 
- @param accountPreferences The AKFAccountPreferences instance that loaded the preference.
- @param key The key for the loaded preference.
- @param value The value for the loaded preference.
- @param error The error if the preference could not be loaded.
+ - Parameter accountPreferences: The AKFAccountPreferences instance that loaded the preference.
+ - Parameter key: The key for the loaded preference.
+ - Parameter value: The value for the loaded preference.
+ - Parameter error: The error if the preference could not be loaded.
  */
 - (void)accountPreferences:(AKFAccountPreferences *)accountPreferences
    didLoadPreferenceForKey:(NSString *)key
                      value:(nullable NSString *)value
                      error:(nullable NSError *)error;
 
-/*!
- @abstract Notifies the delegate that a single preference was set.
+/**
+  Notifies the delegate that a single preference was set.
 
- @param accountPreferences The AKFAccountPreferences instance that set the preference.
- @param key The key for the set preference.
- @param value The value for the set preference.
- @param error The error if the preference could not be set.
+ - Parameter accountPreferences: The AKFAccountPreferences instance that set the preference.
+ - Parameter key: The key for the set preference.
+ - Parameter value: The value for the set preference.
+ - Parameter error: The error if the preference could not be set.
  */
 - (void)accountPreferences:(AKFAccountPreferences *)accountPreferences
     didSetPreferenceForKey:(NSString *)key

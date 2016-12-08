@@ -18,30 +18,30 @@
 
 #import <Foundation/Foundation.h>
 
-/*!
+/**
  @protocol
 
- @abstract Defines the properties that can be configured for the Account Kit UI.
+  Defines the properties that can be configured for the Account Kit UI.
  */
 @protocol AKFConfiguring
 
-/*!
- @abstract List of country codes to disallow.
+/**
+  List of country codes to disallow.
  */
 @property (nonatomic, copy) NSArray<NSString *> *blacklistedCountryCodes;
 
-/*!
- @abstract Specifies the default country code to select.
+/**
+  Specifies the default country code to select.
  */
 @property (nonatomic, copy) NSString *defaultCountryCode;
 
-/*!
- @abstract Specifies if the app supports sending codes to Facebook (as an SMS alternative)
+/**
+  Specifies if the app supports sending codes to Facebook (as an SMS alternative)
 */
 @property (nonatomic) BOOL enableSendToFacebook;
 
-/*!
- @abstract List of country codes to allow.
+/**
+  List of country codes to allow.
  */
 @property (nonatomic, copy) NSArray<NSString *> *whitelistedCountryCodes;
 
