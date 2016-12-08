@@ -1,6 +1,10 @@
+[![npm version](https://badge.fury.io/js/cordova-plugin-accountkit.svg)](https://badge.fury.io/js/cordova-plugin-accountkit)
+
 Cordova AccountKit Plugin
 ======
+
 The Apache Cordova wrapper around the Facebook [AccountKit](https://www.accountkit.com/).
+
 
 ## Installation
 
@@ -26,6 +30,16 @@ It is recommended to add these permission to `config.xml` of your Cordova projec
 <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 ```
+
+
+## Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
+
 
 ## API
 
