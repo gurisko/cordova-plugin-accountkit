@@ -91,7 +91,7 @@ public class AccountKitPlugin extends CordovaPlugin {
     AccountKitConfiguration.AccountKitConfigurationBuilder configurationBuilder =
       new AccountKitConfiguration.AccountKitConfigurationBuilder(
         type,
-        AccountKitActivity.ResponseType.TOKEN);
+        AccountKitActivity.ResponseType.CODE);
     intent.putExtra(AccountKitActivity.ACCOUNT_KIT_ACTIVITY_CONFIGURATION, configurationBuilder.build());
 
     cordova.setActivityResultCallback(this);
