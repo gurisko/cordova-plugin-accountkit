@@ -37,11 +37,17 @@ public class AccountKitPlugin extends CordovaPlugin {
   @Override
   public boolean execute(String action, final JSONArray args, final CallbackContext callbackContext) throws JSONException {
     final JSONObject options = args.getJSONObject(0);
+    try {
+      Boolean useClientAccessToken =  options.getBoolean("useClientAccessToken")  
+    } catch (JSONException e) {
+      // handle error here
+    }
+    
     if ("loginWithPhoneNumber".equals(action)) {
       cordova.getActivity().runOnUiThread(new Runnable() {
         @Override
         public void run() {
-          executeLogin(LoginType.PHONE, callbackContext, options.getBoolean("useClientAccessToken"));
+          executeLogin(LoginType.PHONE, callbackContext, useClientAccessToken);
         }
       });
       return true;
@@ -50,7 +56,7 @@ public class AccountKitPlugin extends CordovaPlugin {
       cordova.getActivity().runOnUiThread(new Runnable() {
         @Override
         public void run() {
-          executeLogin(LoginType.EMAIL, callbackContext, options.getBoolean("useClientAccessToken"));
+          executeLogin(LoginType.EMAIL, callbackContext, useClientAccessToken);
         }
       });
       return true;
