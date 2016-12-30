@@ -26,6 +26,7 @@ public class AccountKitPlugin extends CordovaPlugin {
   private static final String TAG = "AccountKitPlugin";
   public static int APP_REQUEST_CODE = 42;
   private CallbackContext loginContext = null;
+  private Boolean useClientAccessToken = null
 
   @Override
   public void initialize(CordovaInterface cordova, CordovaWebView webView) {
@@ -37,7 +38,6 @@ public class AccountKitPlugin extends CordovaPlugin {
   @Override
   public boolean execute(String action, final JSONArray args, final CallbackContext callbackContext) throws JSONException {
     final JSONObject options = args.getJSONObject(0);
-    final Boolean useClientAccessToken = null;
     try {
       useClientAccessToken = options.getBoolean("useClientAccessToken");
     } catch (JSONException e) {
