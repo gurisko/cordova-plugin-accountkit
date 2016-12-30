@@ -87,11 +87,18 @@ public class AccountKitPlugin extends CordovaPlugin {
       e.printStackTrace();
     }
 
+    AccountKitActivity.ResponseType responseType = null;
+    if (true) {
+      responseType = AccountKitActivity.ResponseType.CODE;
+    } else {
+      responseType = AccountKitActivity.ResponseType.TOKEN;
+    }
+
     Intent intent = new Intent(this.cordova.getActivity(), AccountKitActivity.class);
     AccountKitConfiguration.AccountKitConfigurationBuilder configurationBuilder =
       new AccountKitConfiguration.AccountKitConfigurationBuilder(
         type,
-        AccountKitActivity.ResponseType.CODE);
+        responseType);
     intent.putExtra(AccountKitActivity.ACCOUNT_KIT_ACTIVITY_CONFIGURATION, configurationBuilder.build());
 
     cordova.setActivityResultCallback(this);
