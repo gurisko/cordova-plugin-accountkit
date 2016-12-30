@@ -36,11 +36,12 @@ public class AccountKitPlugin extends CordovaPlugin {
 
   @Override
   public boolean execute(String action, final JSONArray args, final CallbackContext callbackContext) throws JSONException {
+    JSONObject options = args.getJSONObject(0);
     if ("loginWithPhoneNumber".equals(action)) {
       cordova.getActivity().runOnUiThread(new Runnable() {
         @Override
         public void run() {
-          executeLogin(LoginType.PHONE, callbackContext);
+          executeLogin(LoginType.PHONE, callbackContext, options.getBoolean('useClientAccessToken'));
         }
       });
       return true;
@@ -49,7 +50,7 @@ public class AccountKitPlugin extends CordovaPlugin {
       cordova.getActivity().runOnUiThread(new Runnable() {
         @Override
         public void run() {
-          executeLogin(LoginType.EMAIL, callbackContext);
+          executeLogin(LoginType.EMAIL, callbackContext, options.getBoolean('useClientAccessToken'));
         }
       });
       return true;
@@ -71,7 +72,7 @@ public class AccountKitPlugin extends CordovaPlugin {
     return false;
   }
 
-  public final void executeLogin(LoginType type, CallbackContext callbackContext) {
+  public final void executeLogin(LoginType type, CallbackContext callbackContext, Boolean useClientAccessToken) {
     // Set a pending callback to cordova
     loginContext = callbackContext;
     PluginResult pr = new PluginResult(PluginResult.Status.NO_RESULT);
@@ -88,10 +89,10 @@ public class AccountKitPlugin extends CordovaPlugin {
     }
 
     AccountKitActivity.ResponseType responseType = null;
-    if (true) {
-      responseType = AccountKitActivity.ResponseType.CODE;
-    } else {
+    if (useClientAccessToken) {
       responseType = AccountKitActivity.ResponseType.TOKEN;
+    } else {
+      responseType = AccountKitActivity.ResponseType.CODE;
     }
 
     Intent intent = new Intent(this.cordova.getActivity(), AccountKitActivity.class);
