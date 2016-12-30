@@ -41,7 +41,7 @@ public class AccountKitPlugin extends CordovaPlugin {
       cordova.getActivity().runOnUiThread(new Runnable() {
         @Override
         public void run() {
-          executeLogin(LoginType.PHONE, callbackContext, options.getBoolean('useClientAccessToken'));
+          executeLogin(LoginType.PHONE, callbackContext, options.getBoolean("useClientAccessToken"));
         }
       });
       return true;
@@ -50,7 +50,7 @@ public class AccountKitPlugin extends CordovaPlugin {
       cordova.getActivity().runOnUiThread(new Runnable() {
         @Override
         public void run() {
-          executeLogin(LoginType.EMAIL, callbackContext, options.getBoolean('useClientAccessToken'));
+          executeLogin(LoginType.EMAIL, callbackContext, options.getBoolean("useClientAccessToken"));
         }
       });
       return true;
