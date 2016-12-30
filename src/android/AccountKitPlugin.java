@@ -26,7 +26,7 @@ public class AccountKitPlugin extends CordovaPlugin {
   private static final String TAG = "AccountKitPlugin";
   public static int APP_REQUEST_CODE = 42;
   private CallbackContext loginContext = null;
-  private Boolean useClientAccessToken = null
+  private Boolean useClientAccessToken = null;
 
   @Override
   public void initialize(CordovaInterface cordova, CordovaWebView webView) {
