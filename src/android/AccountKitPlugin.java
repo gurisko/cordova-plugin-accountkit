@@ -36,7 +36,7 @@ public class AccountKitPlugin extends CordovaPlugin {
 
   @Override
   public boolean execute(String action, final JSONArray args, final CallbackContext callbackContext) throws JSONException {
-    JSONObject options = args.getJSONObject(0);
+    final JSONObject options = args.getJSONObject(0);
     if ("loginWithPhoneNumber".equals(action)) {
       cordova.getActivity().runOnUiThread(new Runnable() {
         @Override
