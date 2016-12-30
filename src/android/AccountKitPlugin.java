@@ -37,8 +37,9 @@ public class AccountKitPlugin extends CordovaPlugin {
   @Override
   public boolean execute(String action, final JSONArray args, final CallbackContext callbackContext) throws JSONException {
     final JSONObject options = args.getJSONObject(0);
+    Boolean useClientAccessToken = null;
     try {
-      Boolean useClientAccessToken =  options.getBoolean("useClientAccessToken");
+      useClientAccessToken = options.getBoolean("useClientAccessToken");
     } catch (JSONException e) {
       // handle error here
     }
