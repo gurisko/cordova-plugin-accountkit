@@ -2,13 +2,13 @@
 #import <AccountKit/AccountKit.h>
 
 
-@interface AKPlugin : CDVPlugin 
+@interface AKPlugin : CDVPlugin
 
 @property (nonatomic, strong) AKFAccountKit *accountKit;
 
 - (void)loginWithPhoneNumber:(CDVInvokedUrlCommand *)command;
 - (void)loginWithEmail:(CDVInvokedUrlCommand *)command;
-- (void)getAccessToken:(CDVInvokedUrlCommand *)command;
+- (void)getAccount:(CDVInvokedUrlCommand *)command;
 - (void)logout:(CDVInvokedUrlCommand *)command;
 
 @end

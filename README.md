@@ -43,10 +43,49 @@ It is recommended to add these permission to `config.xml` of your Cordova projec
 
 ## API
 
-### Login
+### Login with an email address
 
-`AccountKitPlugin.loginWithEmail(Function success, Function failure)`
-`AccountKitPlugin.loginWithPhoneNumber(Function success, Function failure)`
+```javascript
+AccountKitPlugin.loginWithEmail(Object options, Function success, Function failure)
+```
+
+Available options:
+
+	{
+		defaultCountryCode: "US",
+		facebookNotificationsEnabled: true,
+		initialEmail: "joe@doe.com"
+	}
+
+Available country codes can be found ([here](https://developers.facebook.com/docs/accountkit/countrycodes)).
+
+Success function returns an Object like:
+
+	{
+		accountId: "<string>",
+		applicationId: "<string>",
+		token: "<long string>",
+		lastRefresh: 1451606400,
+		refreshInterval: 2592000
+	}
+
+Failure function returns an error String.
+
+### Login with a phone number
+
+```javascript
+AccountKitPlugin.loginWithPhoneNumber(Object options, Function success, Function failure)
+```
+
+Available options:
+
+	{
+		defaultCountryCode: "US",
+		facebookNotificationsEnabled: true,
+		initialPhoneNumber: ["420", "123456789"]
+	}
+
+Available dialing codes and country codes can be found ([here](https://developers.facebook.com/docs/accountkit/countrycodes)).
 
 Success function returns an Object like:
 
@@ -62,11 +101,15 @@ Failure function returns an error String.
 
 ### Logout
 
-`AccountKitPlugin.logout()`
+```javascript
+AccountKitPlugin.logout()
+```
 
-### Get access token
+### Get account
 
-`AccountKitPlugin.getAccessToken(Function success, Function failure)`
+```javascript
+AccountKitPlugin.getAccount(Function success, Function failure)
+```
 
 Success function returns an Object like:
 
@@ -75,5 +118,7 @@ Success function returns an Object like:
 		applicationId: "<string>",
 		token: "<long string>",
 		lastRefresh: 1451606400,
-		refreshInterval: 2592000
+		refreshInterval: 2592000,
+		email: "<string>",
+		phoneNumber: "<string>"
 	}

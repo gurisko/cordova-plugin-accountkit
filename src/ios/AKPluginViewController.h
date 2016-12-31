@@ -8,7 +8,13 @@
 @property(nonatomic, strong) NSString *callbackId;
 
 - (instancetype)init:(AKFAccountKit *)accountKit;
-- (void)loginWithPhoneNumber:(NSString *)callbackId;
-- (void)loginWithEmail:(NSString *)callbackId;
+- (void)loginWithPhoneNumber:(AKFPhoneNumber *)preFillPhoneNumber
+          defaultCountryCode:(NSString *)defaultCountryCode
+        enableSendToFacebook:(BOOL)facebookNotificationsEnabled
+                    callback:(NSString *)callbackId;
+- (void)loginWithEmailAddress:(NSString *)preFillEmailAddress
+           defaultCountryCode:(NSString *)defaultCountryCode
+         enableSendToFacebook:(BOOL)facebookNotificationsEnabled
+                     callback:(NSString *)callbackId;
 
 @end

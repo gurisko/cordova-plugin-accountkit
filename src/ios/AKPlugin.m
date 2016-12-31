@@ -21,34 +21,77 @@
 #pragma mark - Public API
 
 - (void)loginWithPhoneNumber:(CDVInvokedUrlCommand *)command {
+  NSDictionary *options = [command.arguments objectAtIndex:0];
+  AKFPhoneNumber *preFillPhoneNumber = nil;
+
+  NSString *defaultCountryCode = [options objectForKey:@"defaultCountryCode"];
+  BOOL facebookNotificationsEnabled = [[options objectForKey:@"facebookNotificationsEnabled"] boolValue];
+  NSArray *initialPhoneNumber = [options objectForKey:@"initialPhoneNumber"];
+  if ([initialPhoneNumber count] == 2) {
+    preFillPhoneNumber = [[AKFPhoneNumber alloc]initWithCountryCode:[initialPhoneNumber objectAtIndex:0]
+                                                        phoneNumber:[initialPhoneNumber objectAtIndex:1]];
+  }
+
   AKPluginViewController *vc = [self _prepareViewController];
-  [vc loginWithPhoneNumber:command.callbackId];
+  [vc loginWithPhoneNumber:preFillPhoneNumber
+        defaultCountryCode:defaultCountryCode
+      enableSendToFacebook:facebookNotificationsEnabled
+                  callback:command.callbackId];
 }
 
 - (void)loginWithEmail:(CDVInvokedUrlCommand *)command {
+  NSDictionary *options = [command.arguments objectAtIndex:0];
+
+  NSString *defaultCountryCode = [options objectForKey:@"defaultCountryCode"];
+  BOOL facebookNotificationsEnabled = [[options objectForKey:@"facebookNotificationsEnabled"] boolValue];
+  NSString *initialEmail = [options objectForKey:@"initialEmail"];
+
   AKPluginViewController *vc = [self _prepareViewController];
-  [vc loginWithEmail:command.callbackId];
+  [vc loginWithEmailAddress:initialEmail
+         defaultCountryCode:defaultCountryCode
+       enableSendToFacebook:facebookNotificationsEnabled
+                   callback:command.callbackId];
 }
 
-- (void)getAccessToken:(CDVInvokedUrlCommand *)command {
-  CDVPluginResult *result = nil;
+- (void)getAccount:(CDVInvokedUrlCommand *)command {
   id<AKFAccessToken> accessToken = [_accountKit currentAccessToken];
 
-  if ([accessToken accountID]) {
-    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
-                           messageAsDictionary:[self formatAccessToken:accessToken]];
-  } else {
-    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR
-                               messageAsString:@"Session not open."];
+  if (accessToken == nil) {
+    [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR
+                                                             messageAsString:@"Access token not found"]
+                                callbackId:command.callbackId];
+    return;
   }
 
-  [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+  [_accountKit requestAccount:^(id<AKFAccount> account, NSError *error) {
+    CDVPluginResult *result = nil;
+    if (error) {
+      result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR
+                                 messageAsString:error.localizedDescription];
+      [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+      return;
+    }
+
+    NSMutableDictionary *message = [self formatAccessToken:accessToken];
+
+    if ([[account emailAddress] length] > 0) {
+      [message setValue:account.emailAddress forKey:@"email"];
+    }
+
+    if ([account phoneNumber] != nil) {
+      [message setValue:[[account phoneNumber] stringRepresentation] forKey:@"phoneNumber"];
+    }
+
+    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
+                           messageAsDictionary:message];
+    [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+  }];
 }
 
 - (void)logout:(CDVInvokedUrlCommand *)command {
   [_accountKit logOut];
 
-  CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+  CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
   [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
 }
 
@@ -64,20 +107,22 @@
   CDVPluginResult *result;
   NSDictionary *response = [notification userInfo];
 
-  if ([response objectForKey:@"success"]) {
+  if ([[response objectForKey:@"success"] boolValue]) {
     result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
                            messageAsDictionary:[self formatAccessToken:[response objectForKey:@"data"]]];
   } else {
     result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR
                                messageAsString:[response objectForKey:@"error"]];
   }
-    
+
   [self.commandDelegate sendPluginResult:result
                               callbackId:[response objectForKey:@"callbackId"]];
 }
 
 - (NSMutableDictionary*)formatAccessToken:(id<AKFAccessToken>)accessToken {
-  if( accessToken == nil ) return nil;
+  if (accessToken == nil) {
+    return nil;
+  }
   NSMutableDictionary *result = [NSMutableDictionary dictionary];
   result[@"accountId"] = accessToken.accountID;
   result[@"applicationId"] = accessToken.applicationID;
