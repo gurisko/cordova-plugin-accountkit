@@ -9,7 +9,7 @@
 
 - (void)pluginInitialize {
   if (_accountKit == nil) {
-    _accountKit = [[AKFAccountKit alloc] initWithResponseType:AKFResponseTypeAccessToken];
+    _accountKit = [[AKFAccountKit alloc] initWithResponseType:AKFResponseTypeAuthorizationCode];
     _theme = [AKFTheme defaultTheme];
   }
   [[NSNotificationCenter defaultCenter] addObserver:self
