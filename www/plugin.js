@@ -3,17 +3,22 @@ var exec = require('cordova/exec');
 var PLUGIN_NAME = 'AccountKitPlugin';
 
 var AccountKitPlugin = {
-  loginWithPhoneNumber: function(s, f) {
-    exec(s, f, PLUGIN_NAME, 'loginWithPhoneNumber', []);
+  loginWithEmail: function(options, onSuccess, onFailure) {
+    options = options || {};
+    exec(onSuccess, onFailure, PLUGIN_NAME, 'loginWithEmail', [options]);
   },
-  loginWithEmail: function(s, f) {
-    exec(s, f, PLUGIN_NAME, 'loginWithEmail', []);
+
+  loginWithPhoneNumber: function(options, onSuccess, onFailure) {
+    options = options || {};
+    exec(onSuccess, onFailure, PLUGIN_NAME, 'loginWithPhoneNumber', [options]);
   },
-  getAccessToken: function(s, f) {
-    exec(s, f, PLUGIN_NAME, 'getAccessToken', []);
+
+  getAccount: function(onSuccess, onFailure) {
+    exec(onSuccess, onFailure, PLUGIN_NAME, 'getAccount', []);
   },
-  logout: function(s, f) {
-    exec(s, f, PLUGIN_NAME, 'logout', []);
+
+  logout: function(onSuccess, onFailure) {
+    exec(onSuccess, onFailure, PLUGIN_NAME, 'logout', []);
   }
 };
 

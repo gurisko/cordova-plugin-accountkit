@@ -18,27 +18,36 @@
   return self;
 }
 
-- (void)loginWithPhoneNumber:(NSString *)callbackId {
+- (void)loginWithPhoneNumber:(AKFPhoneNumber *)preFillPhoneNumber
+          defaultCountryCode:(NSString *)defaultCountryCode
+        enableSendToFacebook:(BOOL)facebookNotificationsEnabled
+                    callback:(NSString *)callbackId {
   NSString *inputState = [[NSUUID UUID] UUIDString];
   self.callbackId = callbackId;
 
   dispatch_async(dispatch_get_main_queue(), ^{
-    UIViewController<AKFViewController> *vc = [_accountKit viewControllerForPhoneLoginWithPhoneNumber:nil
-                                                                                              state:inputState];
-    vc.enableSendToFacebook = YES;
+    UIViewController<AKFViewController> *vc = [_accountKit viewControllerForPhoneLoginWithPhoneNumber:preFillPhoneNumber
+                                                                                                state:inputState];
+    vc.enableSendToFacebook = facebookNotificationsEnabled;
+    vc.defaultCountryCode = defaultCountryCode;
     [self _prepareLoginViewController:vc];
     UIViewController *rootViewController = [UIApplication sharedApplication].delegate.window.rootViewController;
     [rootViewController presentViewController:vc animated:YES completion:nil];
   });
 }
 
-- (void)loginWithEmail:(NSString *)callbackId {
+- (void)loginWithEmailAddress:(NSString *)preFillEmailAddress
+           defaultCountryCode:(NSString *)defaultCountryCode
+         enableSendToFacebook:(BOOL)facebookNotificationsEnabled
+                     callback:(NSString *)callbackId {
   NSString *inputState = [[NSUUID UUID] UUIDString];
   self.callbackId = callbackId;
 
   dispatch_async(dispatch_get_main_queue(), ^{
-    UIViewController<AKFViewController> *vc = [_accountKit viewControllerForEmailLoginWithEmail:nil
-                                                                                        state:inputState];
+    UIViewController<AKFViewController> *vc = [_accountKit viewControllerForEmailLoginWithEmail:preFillEmailAddress
+                                                                                          state:inputState];
+    vc.enableSendToFacebook = facebookNotificationsEnabled;
+    vc.defaultCountryCode = defaultCountryCode;
     [self _prepareLoginViewController:vc];
     UIViewController *rootViewController = [UIApplication sharedApplication].delegate.window.rootViewController;
     [rootViewController presentViewController:vc animated:YES completion:nil];
@@ -70,10 +79,10 @@
  */
 - (void)viewController:(UIViewController<AKFViewController> *)viewController didCompleteLoginWithAccessToken:(id<AKFAccessToken>)accessToken state:(NSString *)state {
   NSDictionary* response = @{
-    @"success": @YES,
-    @"data": accessToken,
-    @"callbackId": self.callbackId
-  };
+                             @"success": @YES,
+                             @"data": accessToken,
+                             @"callbackId": self.callbackId
+                             };
   [[NSNotificationCenter defaultCenter] postNotificationName:@"AccountKitDone"
                                                       object:nil
                                                     userInfo:response];
@@ -88,10 +97,10 @@
 - (void)viewController:(UIViewController<AKFViewController> *)viewController
       didFailWithError:(NSError *)error {
   NSDictionary* response = @{
-    @"success": @NO,
-    @"error": [error localizedDescription],
-    @"callbackId": self.callbackId
-  };
+                             @"success": @NO,
+                             @"error": [error localizedDescription],
+                             @"callbackId": self.callbackId
+                             };
   [[NSNotificationCenter defaultCenter] postNotificationName:@"AccountKitDone"
                                                       object:nil
                                                     userInfo:response];
@@ -104,10 +113,10 @@
  */
 - (void)viewControllerDidCancel:(UIViewController<AKFViewController> *)viewController {
   NSDictionary* response = @{
-    @"success": @NO,
-    @"error": @"Cancelled",
-    @"callbackId": self.callbackId
-  };
+                             @"success": @NO,
+                             @"error": @"User cancelled",
+                             @"callbackId": self.callbackId
+                             };
   [[NSNotificationCenter defaultCenter] postNotificationName:@"AccountKitDone"
                                                       object:nil
                                                     userInfo:response];
