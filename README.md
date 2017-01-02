@@ -45,8 +45,16 @@ It is recommended to add these permission to `config.xml` of your Cordova projec
 
 ### Login
 
-`AccountKitPlugin.loginWithEmail(Function success, Function failure)`
-`AccountKitPlugin.loginWithPhoneNumber(Function success, Function failure)`
+`AccountKitPlugin.loginWithEmail(Function success, Function failure, Object options)`
+`AccountKitPlugin.loginWithPhoneNumber(Function success, Function failure, Object options)`
+
+Options object: 
+
+	{
+		// Enable to use client access tokens, disable to receive code
+	  useClientAccessToken: Boolean 
+	}
+
 
 Success function returns an Object like:
 

@@ -26,6 +26,7 @@ public class AccountKitPlugin extends CordovaPlugin {
   private static final String TAG = "AccountKitPlugin";
   public static int APP_REQUEST_CODE = 42;
   private CallbackContext loginContext = null;
+  private Boolean useClientAccessToken = null;
 
   @Override
   public void initialize(CordovaInterface cordova, CordovaWebView webView) {
@@ -36,11 +37,18 @@ public class AccountKitPlugin extends CordovaPlugin {
 
   @Override
   public boolean execute(String action, final JSONArray args, final CallbackContext callbackContext) throws JSONException {
+    final JSONObject options = args.getJSONObject(0);
+    try {
+      useClientAccessToken = options.getBoolean("useClientAccessToken");
+    } catch (JSONException e) {
+      // handle error here
+    }
+    
     if ("loginWithPhoneNumber".equals(action)) {
       cordova.getActivity().runOnUiThread(new Runnable() {
         @Override
         public void run() {
-          executeLogin(LoginType.PHONE, callbackContext);
+          executeLogin(LoginType.PHONE, callbackContext, useClientAccessToken);
         }
       });
       return true;
@@ -49,7 +57,7 @@ public class AccountKitPlugin extends CordovaPlugin {
       cordova.getActivity().runOnUiThread(new Runnable() {
         @Override
         public void run() {
-          executeLogin(LoginType.EMAIL, callbackContext);
+          executeLogin(LoginType.EMAIL, callbackContext, useClientAccessToken);
         }
       });
       return true;
@@ -71,7 +79,7 @@ public class AccountKitPlugin extends CordovaPlugin {
     return false;
   }
 
-  public final void executeLogin(LoginType type, CallbackContext callbackContext) {
+  public final void executeLogin(LoginType type, CallbackContext callbackContext, Boolean useClientAccessToken) {
     // Set a pending callback to cordova
     loginContext = callbackContext;
     PluginResult pr = new PluginResult(PluginResult.Status.NO_RESULT);
@@ -87,11 +95,18 @@ public class AccountKitPlugin extends CordovaPlugin {
       e.printStackTrace();
     }
 
+    AccountKitActivity.ResponseType responseType = null;
+    if (useClientAccessToken) {
+      responseType = AccountKitActivity.ResponseType.TOKEN;
+    } else {
+      responseType = AccountKitActivity.ResponseType.CODE;
+    }
+
     Intent intent = new Intent(this.cordova.getActivity(), AccountKitActivity.class);
     AccountKitConfiguration.AccountKitConfigurationBuilder configurationBuilder =
       new AccountKitConfiguration.AccountKitConfigurationBuilder(
         type,
-        AccountKitActivity.ResponseType.TOKEN);
+        responseType);
     intent.putExtra(AccountKitActivity.ACCOUNT_KIT_ACTIVITY_CONFIGURATION, configurationBuilder.build());
 
     cordova.setActivityResultCallback(this);
