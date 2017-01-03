@@ -110,29 +110,24 @@ public class AccountKitPlugin extends CordovaPlugin {
       return;
     }
 
+    boolean useAccessToken = options.optBoolean("useAccessToken", false);
+
     Intent intent = new Intent(this.cordova.getActivity(), AccountKitActivity.class);
     AccountKitConfiguration.AccountKitConfigurationBuilder configurationBuilder =
       new AccountKitConfiguration.AccountKitConfigurationBuilder(
         type,
-        AccountKitActivity.ResponseType.TOKEN);
+        useAccessToken ? AccountKitActivity.ResponseType.TOKEN : AccountKitActivity.ResponseType.CODE);
 
-    if (options.has("defaultCountryCode")) {
-      configurationBuilder.setDefaultCountryCode(options.getString("defaultCountryCode"));
-    }
+    configurationBuilder.setDefaultCountryCode(options.optString("defaultCountryCode", null));
+    configurationBuilder.setFacebookNotificationsEnabled(options.optBoolean("facebookNotificationsEnabled", false));
 
-    if (options.has("facebookNotificationsEnabled")) {
-      configurationBuilder.setFacebookNotificationsEnabled(options.getBoolean("facebookNotificationsEnabled"));
-    }
-
-    if (type == LoginType.PHONE && options.has("initialPhoneNumber")) {
-      JSONArray phoneNumber = options.getJSONArray("initialPhoneNumber");
-      if (phoneNumber.length() == 2) {
+    if (type == LoginType.PHONE) {
+      JSONArray phoneNumber = options.optJSONArray("initialPhoneNumber");
+      if (phoneNumber != null && phoneNumber.length() == 2) {
         configurationBuilder.setInitialPhoneNumber(new PhoneNumber(phoneNumber.getString(0), phoneNumber.getString(1)));
       }
-    }
-
-    if (type == LoginType.EMAIL && options.has("initialEmail")) {
-      configurationBuilder.setInitialEmail(options.getString("initialEmail"));
+    } else if (type == LoginType.EMAIL) {
+      configurationBuilder.setInitialEmail(options.optString("initialEmail", null));
     }
 
     intent.putExtra(AccountKitActivity.ACCOUNT_KIT_ACTIVITY_CONFIGURATION, configurationBuilder.build());
@@ -161,12 +156,17 @@ public class AccountKitPlugin extends CordovaPlugin {
 
       try {
         final AccessToken accessToken = loginResult.getAccessToken();
+        final String authorizationCode = loginResult.getAuthorizationCode();
+
         if (accessToken != null) {
           result = formatAccessToken(accessToken);
-        } else {
+        } else if (authorizationCode != null) {
           result = new JSONObject();
-          result.put("code", loginResult.getAuthorizationCode());
+          result.put("code", authorizationCode);
           result.put("state", loginResult.getFinalAuthorizationState());
+        } else {
+          callback.error("Unknown response type");
+          return;
         }
         callback.success(result);
       } catch (JSONException e) {

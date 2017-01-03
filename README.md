@@ -53,6 +53,7 @@ AccountKitPlugin.loginWithEmail(Object options, Function success, Function failu
 Available options:
 
 	{
+		useAccessToken: true,
 		defaultCountryCode: "US",
 		facebookNotificationsEnabled: true,
 		initialEmail: "joe@doe.com"
@@ -81,6 +82,7 @@ AccountKitPlugin.loginWithPhoneNumber(Object options, Function success, Function
 Available options:
 
 	{
+		useAccessToken: true,
 		defaultCountryCode: "US",
 		facebookNotificationsEnabled: true,
 		initialPhoneNumber: ["420", "123456789"]
