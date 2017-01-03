@@ -11,7 +11,8 @@ The Apache Cordova wrapper around the Facebook [AccountKit](https://www.accountk
 1. Create Facebook Developer Account
 2. Get a Facebook App ID  (`APP_ID`)
 3. Get an AccountKit client token (`CLIENT_TOKEN`)
-4. To install the plugin in your app, execute the following (replace variables where necessary):
+4. Set _Enable Client Access Token Flow_ in your app's dashboard to **ON** (for more information on Client Access Token Flow, see [Access Tokens and Authorization Codes](https://developers.facebook.com/docs/accountkit/accesstokens))
+5. To install the plugin in your app, execute the following (replace variables where necessary):
 
 ```bash
 cordova plugin add cordova-plugin-accountkit --save \
@@ -57,7 +58,7 @@ Available options:
 		initialEmail: "joe@doe.com"
 	}
 
-Available country codes can be found ([here](https://developers.facebook.com/docs/accountkit/countrycodes)).
+Available country codes can be found [here](https://developers.facebook.com/docs/accountkit/countrycodes).
 
 Success function returns an Object like:
 
@@ -85,7 +86,7 @@ Available options:
 		initialPhoneNumber: ["420", "123456789"]
 	}
 
-Available dialing codes and country codes can be found ([here](https://developers.facebook.com/docs/accountkit/countrycodes)).
+Available dialing codes and country codes can be found [here](https://developers.facebook.com/docs/accountkit/countrycodes).
 
 Success function returns an Object like:
 
