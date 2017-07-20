@@ -39,6 +39,14 @@ NS_ASSUME_NONNULL_BEGIN
                         phoneNumber:(NSString *)phoneNumber
 NS_DESIGNATED_INITIALIZER;
 
+/**
+ This additional initializer stores the corresponding country ISO code
+ to the country code for the phone number
+ */
+- (instancetype)initWithCountryCode:(NSString *)countryCode
+                         countryISO:(NSString *)iso
+                        phoneNumber:(NSString *)phoneNumber;
+
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
 
@@ -46,6 +54,13 @@ NS_DESIGNATED_INITIALIZER;
   The country code for the phone number.
  */
 @property (nonatomic, copy, readonly) NSString *countryCode;
+
+/**
+ The country ISO code for the phone number.
+ The ISO code for the country code can be nil
+ */
+@property (nonatomic, copy, readonly) NSString *countryISO;
+
 
 /**
   The remaining portion of the phone number after the country code.

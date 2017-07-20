@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "Vissza";
 "com_accountkit_country_code_title" = "Válaszd ki az országodat.";
 "com_accountkit_phone_login_phone_number_placeholder" = "Szám";
+"com_accountkit_phone_login_text" = "Koppints a %1$@ gombra, és a Facebook technológiájával működő Account Kit megerősítő SMS-t küld. A(z) %2$@ a Facebook technológiájának használatával könnyíti meg a bejelentkezést, de nincs szükséged hozzá Facebook-fiókra. Ez üzenet- és adatforgalmi szolgáltatási díjakkal járhat. <a href=\"%3$@\">Tájékoztatás arról, hogyan használja a Facebook az adataidat</a>.";
+"com_accountkit_phone_sending_sms" = "SMS küldése a kóddal";

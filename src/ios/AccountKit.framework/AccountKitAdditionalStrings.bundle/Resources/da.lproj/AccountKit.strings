@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "Tilbage";
 "com_accountkit_country_code_title" = "Vælg dit land";
 "com_accountkit_phone_login_phone_number_placeholder" = "Nummer";
+"com_accountkit_phone_login_text" = "Tryk på %1$@ for at få en sms-bekræftelse fra Account Kit leveret af Facebook. %2$@ bruger Facebook-teknologi til at hjælpe dig med at logge på, men du behøver ikke en Facebook-konto. Du skal muligvis betale for beskeder og dataforbrug. <a href=\"%3$@\">Se, hvordan Facebook bruger dine oplysninger<</a>.";
+"com_accountkit_phone_sending_sms" = "Sender en sms med din kode";

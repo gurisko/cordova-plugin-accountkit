@@ -20,7 +20,7 @@
 //
 
 "com_accountkit_country_code_AD" = "ઍન્ડોરા";
-"com_accountkit_country_code_AE" = "સંયુક્ત આરબ અમીરાત";
+"com_accountkit_country_code_AE" = "સંયુક્ત અરબ અમીરાત";
 "com_accountkit_country_code_AF" = "અફઘાનિસ્તાન";
 "com_accountkit_country_code_AG" = "એન્ટિગુઆ";
 "com_accountkit_country_code_AI" = "ઍંગ્વિલા";
@@ -34,7 +34,7 @@
 "com_accountkit_country_code_AW" = "અરુબા";
 "com_accountkit_country_code_AZ" = "અઝરબૈજાન";
 "com_accountkit_country_code_BA" = "બોસ્નિયા અને હર્ઝેગોવિના";
-"com_accountkit_country_code_BB" = "બારબેડોસ";
+"com_accountkit_country_code_BB" = "બાર્બાડોસ";
 "com_accountkit_country_code_BD" = "બાંગ્લાદેશ";
 "com_accountkit_country_code_BE" = "બેલ્જીયમ";
 "com_accountkit_country_code_BF" = "બર્કિના ફાસો";
@@ -56,7 +56,7 @@
 "com_accountkit_country_code_CD" = "ડેમોક્રેટિક રિપબ્લિક ઑફ કૉંગો";
 "com_accountkit_country_code_CF" = "મધ્ય આફ્રિકન પ્રજાસત્તાક";
 "com_accountkit_country_code_CG" = "રિપબ્લિક ઑફ કૉંગો";
-"com_accountkit_country_code_CH" = "સ્વિત્ઝરલૅન્ડ";
+"com_accountkit_country_code_CH" = "સ્વિટ્ઝર્લૅન્ડ";
 "com_accountkit_country_code_CI" = "કોટે ડિઆઇવરી";
 "com_accountkit_country_code_CK" = "કુક આઇલૅન્ડ્સ";
 "com_accountkit_country_code_CL" = "ચિલી";
@@ -75,7 +75,7 @@
 "com_accountkit_country_code_DM" = "ડોમિનિકા";
 "com_accountkit_country_code_DO" = "ડોમિનિકન રિપબ્લિક";
 "com_accountkit_country_code_DZ" = "અલ્જીરિયા";
-"com_accountkit_country_code_EC" = "ઇક્વેડોર";
+"com_accountkit_country_code_EC" = "એક્વાડોર";
 "com_accountkit_country_code_EE" = "એસ્ટોનિયા";
 "com_accountkit_country_code_EG" = "ઈજિપ્ત";
 "com_accountkit_country_code_EH" = "પશ્ચિમી સહારા";
@@ -107,7 +107,7 @@
 "com_accountkit_country_code_GW" = "ગિની-બિસાઉ";
 "com_accountkit_country_code_GY" = "ગયાના";
 "com_accountkit_country_code_HK" = "હોંગ કોંગ";
-"com_accountkit_country_code_HN" = "હૉન્ડુરાઝ";
+"com_accountkit_country_code_HN" = "હૉન્ડુરાસ";
 "com_accountkit_country_code_HR" = "ક્રોએશિયા";
 "com_accountkit_country_code_HT" = "હૈતી";
 "com_accountkit_country_code_HU" = "હંગેરી";
@@ -120,7 +120,7 @@
 "com_accountkit_country_code_IQ" = "ઇરાક";
 "com_accountkit_country_code_IR" = "ઈરાન";
 "com_accountkit_country_code_IS" = "આઇસલેન્ડ";
-"com_accountkit_country_code_IT" = "ઇટાલી";
+"com_accountkit_country_code_IT" = "ઇટલી";
 "com_accountkit_country_code_JE" = "જર્સી";
 "com_accountkit_country_code_JM" = "જમૈકા";
 "com_accountkit_country_code_JO" = "જોર્ડન";
@@ -165,7 +165,7 @@
 "com_accountkit_country_code_MT" = "માલ્ટા";
 "com_accountkit_country_code_MU" = "મૉરિશીયસ";
 "com_accountkit_country_code_MV" = "માલદિવ્સ";
-"com_accountkit_country_code_MW" = "મલાવી";
+"com_accountkit_country_code_MW" = "માલાવી";
 "com_accountkit_country_code_MX" = "મેક્સિકો";
 "com_accountkit_country_code_MY" = "મલેશિયા";
 "com_accountkit_country_code_MZ" = "મોઝામ્બિક";
@@ -193,7 +193,7 @@
 "com_accountkit_country_code_PR" = "પ્યુઅર્ટો રિકો";
 "com_accountkit_country_code_PS" = "પેલેસ્ટાઇન";
 "com_accountkit_country_code_PT" = "પોર્ટુગલ";
-"com_accountkit_country_code_PW" = "પાલાઉ";
+"com_accountkit_country_code_PW" = "પલાઉ";
 "com_accountkit_country_code_PY" = "પેરાગ્વે";
 "com_accountkit_country_code_QA" = "કતાર";
 "com_accountkit_country_code_RE" = "રીયુનિયન";
@@ -250,7 +250,7 @@
 "com_accountkit_country_code_WF" = "વૉલિસ અને ફ્યુચુના";
 "com_accountkit_country_code_WS" = "સમોઆ";
 "com_accountkit_country_code_YE" = "યમન";
-"com_accountkit_country_code_YT" = "મયૉત ( ફ્રેંચ)";
+"com_accountkit_country_code_YT" = "માયોટી";
 "com_accountkit_country_code_ZA" = "દક્ષિણ આફ્રિકા";
 "com_accountkit_country_code_ZM" = "ઝામ્બિયા";
 "com_accountkit_country_code_ZW" = "ઝિમ્બાબ્વે";

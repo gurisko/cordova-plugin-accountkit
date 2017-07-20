@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "Wstecz";
 "com_accountkit_country_code_title" = "Wybierz kraj";
 "com_accountkit_phone_login_phone_number_placeholder" = "Numer";
+"com_accountkit_phone_login_text" = "Dotknij %1$@, aby otrzymać SMS z potwierdzeniem z aplikacji Account Kit obsługiwanej przez Facebooka. %2$@ wykorzystuje technologię Facebooka w celu ułatwienia logowania, lecz nie jest konieczne posiadanie konta na Facebooku. Mogą zostać naliczone opłaty za przesyłanie wiadomości i danych. <a href=\"%3$@\">Dowiedz się, jak Facebook wykorzystuje Twoje dane</a>";
+"com_accountkit_phone_sending_sms" = "Wysyłanie SMSa z kodem";

@@ -16,21 +16,34 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@class AKFTheme;
-
-NS_ASSUME_NONNULL_BEGIN
+#import <AccountKit/AKFUIManager.h>
 
 /**
  @protocol
 
-  The receiver can be themed.
+  Protocol for classes that manage UI.
  */
-@protocol AKFTheming
+@protocol AKFUIManaging <NSObject>
 
-@property (null_resettable, nonatomic, copy) AKFTheme *theme UI_APPEARANCE_SELECTOR;
+/**
+  The UI manager.
+ */
+@property (nonatomic, strong) id<AKFUIManager> uiManager;
+
+/**
+ Helper setter for backwards compatibility with older versions.
+ Should be removed in the future versions
+ */
+// TODO: t15955381 deprecate all the extras for backwards compatibility
+- (void)setAdvancedUIManager:(id<AKFAdvancedUIManager>)uiManager;
+
+/**
+ Helper setter for backwards compatibility with older versions.
+ Should be removed in the future versions
+ */
+// TODO: t15955381 deprecate all the extras for backwards compatibility
+- (void)setTheme:(AKFTheme *)theme;
 
 @end
-
-NS_ASSUME_NONNULL_END

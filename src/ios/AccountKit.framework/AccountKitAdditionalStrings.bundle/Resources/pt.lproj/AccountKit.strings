@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "Voltar";
 "com_accountkit_country_code_title" = "Selecione seu país";
 "com_accountkit_phone_login_phone_number_placeholder" = "Número";
+"com_accountkit_phone_login_text" = "Toque em %1$@ para receber um SMS de confirmação do Account Kit com a tecnologia do Facebook. O %2$@ utiliza a tecnologia do Facebook para ajudar a entrar, mas você não precisa de uma conta do Facebook. Taxas de mensagens e de dados podem ser aplicadas. <a href=\"%3$@\">Saiba como o Facebook usa suas informações</a>.";
+"com_accountkit_phone_sending_sms" = "Enviando um SMS com seu código";

@@ -19,10 +19,9 @@
 #import <UIKit/UIKit.h>
 
 #import <AccountKit/AKFAccessToken.h>
-#import <AccountKit/AKFAdvancedUIManaging.h>
 #import <AccountKit/AKFConfiguring.h>
 #import <AccountKit/AKFLoginType.h>
-#import <AccountKit/AKFTheming.h>
+#import <AccountKit/AKFUIManaging.h>
 
 @protocol AKFViewControllerDelegate;
 
@@ -31,7 +30,7 @@
 
   A view controller for Account Kit that reports the status of the login through the delegate.
  */
-@protocol AKFViewController <AKFAdvancedUIManaging, AKFConfiguring, AKFTheming>
+@protocol AKFViewController <AKFUIManaging, AKFConfiguring>
 
 /**
   The delegate for the receiver.

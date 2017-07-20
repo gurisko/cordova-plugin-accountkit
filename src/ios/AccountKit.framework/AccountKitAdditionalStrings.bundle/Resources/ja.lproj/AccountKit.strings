@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "戻る";
 "com_accountkit_country_code_title" = "国を選択";
 "com_accountkit_phone_login_phone_number_placeholder" = "電話番号";
+"com_accountkit_phone_login_text" = "%1$@ をタップすると、FacebookのAccount KitからSMSによる確認メッセージが送信されます。%2$@のサインインにはFacebookのテクノロジーが使用されていますが、Facebookアカウントは不要です。メッセージ料金とデータ料金が発生する場合があります。<a href=\"%3$@\">Facebookがあなたの情報をどのように使うかをご覧ください</a>。";
+"com_accountkit_phone_sending_sms" = "コードをSMSで送信";

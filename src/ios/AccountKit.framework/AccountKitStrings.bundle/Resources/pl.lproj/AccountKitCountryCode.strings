@@ -68,7 +68,7 @@
 "com_accountkit_country_code_CV" = "Republika Zielonego Przylądka";
 "com_accountkit_country_code_CW" = "Curaçao";
 "com_accountkit_country_code_CY" = "Cypr";
-"com_accountkit_country_code_CZ" = "Republika Czeska";
+"com_accountkit_country_code_CZ" = "Czechy";
 "com_accountkit_country_code_DE" = "Niemcy";
 "com_accountkit_country_code_DJ" = "Dżibuti";
 "com_accountkit_country_code_DK" = "Dania";
@@ -134,7 +134,7 @@
 "com_accountkit_country_code_KP" = "Korea Północna";
 "com_accountkit_country_code_KR" = "Korea Południowa";
 "com_accountkit_country_code_KW" = "Kuwejt";
-"com_accountkit_country_code_KY" = "Kajmany (wyspy)";
+"com_accountkit_country_code_KY" = "Kajmany";
 "com_accountkit_country_code_KZ" = "Kazachstan";
 "com_accountkit_country_code_LA" = "Laos";
 "com_accountkit_country_code_LB" = "Liban";
@@ -142,7 +142,7 @@
 "com_accountkit_country_code_LI" = "Liechtenstein";
 "com_accountkit_country_code_LK" = "Sri Lanka";
 "com_accountkit_country_code_LR" = "Liberia";
-"com_accountkit_country_code_LS" = "Lesoto";
+"com_accountkit_country_code_LS" = "Lesotho";
 "com_accountkit_country_code_LT" = "Litwa";
 "com_accountkit_country_code_LU" = "Luksemburg";
 "com_accountkit_country_code_LV" = "Łotwa";
@@ -188,7 +188,7 @@
 "com_accountkit_country_code_PG" = "Papua-Nowa Gwinea";
 "com_accountkit_country_code_PH" = "Filipiny";
 "com_accountkit_country_code_PK" = "Pakistan";
-"com_accountkit_country_code_PL" = "Polsce";
+"com_accountkit_country_code_PL" = "Polska";
 "com_accountkit_country_code_PM" = "Saint-Pierre i Miquelon";
 "com_accountkit_country_code_PR" = "Portoryko";
 "com_accountkit_country_code_PS" = "Palestyna";

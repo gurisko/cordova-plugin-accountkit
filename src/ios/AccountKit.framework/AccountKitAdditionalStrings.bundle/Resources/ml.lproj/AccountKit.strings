@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "മടങ്ങുക";
 "com_accountkit_country_code_title" = "നിങ്ങളുടെ രാജ്യം തിരഞ്ഞെടുക്കൂ";
 "com_accountkit_phone_login_phone_number_placeholder" = "നമ്പർ";
+"com_accountkit_phone_login_text" = "Facebook നൽകുന്ന Account Kit-ൽ നിന്ന് SMS സ്ഥിരീകരണം ലഭിക്കുന്നതിന് %1$@ ടാപ്പുചെയ്യുക. നിങ്ങളെ സൈൻ ഇൻ ചെയ്യാൻ സഹായിക്കുന്നതിന് %2$@, Facebook സാങ്കേതിക വിദ്യ ഉപയോഗിക്കുന്നു, നിങ്ങൾക്ക് ഒരു Facebook അക്കൗണ്ട് ആവശ്യമില്ല. സന്ദേശ, ഡാറ്റ നിരക്കുകൾ ബാധകമായേക്കാം. <a href=\"%3$@\">നിങ്ങളുടെ വിവരം Facebook എങ്ങനെ ഉപയോഗിക്കുമെന്നതിനെക്കുറിച്ച് അറിയുക</a>.";
+"com_accountkit_phone_sending_sms" = "നിങ്ങളുടെ കോഡ്‌ അടങ്ങിയ ഒരു SMS അയയ്‌ക്കുന്നു";

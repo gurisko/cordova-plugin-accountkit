@@ -95,6 +95,11 @@ typedef NS_ENUM(NSInteger, AKFInvalidParameterValueErrorCode)
     The operation was not successful.
    */
   AKFOperationNotSuccessful = 407,
+
+  /**
+    The provided UIManager is not valid
+   */
+  AKFInvalidUIManager = 408,
 };
 
 /**

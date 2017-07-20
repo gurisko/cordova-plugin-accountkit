@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "પાછળ";
 "com_accountkit_country_code_title" = "તમારો દેશ પસંદ કરો";
 "com_accountkit_phone_login_phone_number_placeholder" = "નંબર";
+"com_accountkit_phone_login_text" = "Facebook દ્વારા સંચાલિત Account Kit માંથી SMS પુષ્ટિકરણ મેળવવા માટે %1$@ ટૅપ કરો. %2$@ સાઇન ઇન કરવામાં તમારી મદદ કરવા Facebook તકનીકનો ઉપયોગ કરે છે, પરંતુ તમને Facebook એકાઉન્ટની જરૂર પડતી નથી. સંદેશ અને ડેટા દર લાગુ થઈ શકે છે. <a href=\"%3$@\">Facebook તમારી માહિતીનો ઉપયોગ કેવી રીતે કરે છે તે જાણો</a>.";
+"com_accountkit_phone_sending_sms" = "તમારા કોડથી એક SMS મોકલો";

@@ -21,15 +21,16 @@
 #import <AccountKit/AKFButtonType.h>
 #import <AccountKit/AKFLoginFlowState.h>
 #import <AccountKit/AKFTextPosition.h>
+#import <AccountKit/AKFTheme.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 /**
  @protocol
 
-  A controller that exposes actions to the AKFAdvancedUIManager
+  A controller that exposes actions to the UIManager
  */
-@protocol AKFAdvancedUIActionController <NSObject>
+@protocol AKFActionController <NSObject>
 
 /**
   Triggers a pop of the current state.
@@ -46,9 +47,9 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  @protocol
 
-  Manager for advanced UI configuration.
+  Manager for UI configuration.
  */
-@protocol AKFAdvancedUIManager <NSObject>
+@protocol AKFUIManager <NSObject>
 
 @optional
 
@@ -108,7 +109,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  - Parameter actionController: the action controller
  */
-- (void)setActionController:(nonnull id<AKFAdvancedUIActionController>)actionController;
+- (void)setActionController:(nonnull id<AKFActionController>)actionController;
 
 /**
   Called when an error is encountered and should be displayed in the UI.
@@ -129,6 +130,33 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (AKFTextPosition)textPositionForState:(AKFLoginFlowState)state;
 
+/**
+  Returns a theme for the current view.
+
+ - Returns: a theme or null for the default theme
+ */
+- (nullable AKFTheme *)theme;
+@end
+
+
+/**
+ @protocol
+
+ This protocol is defined for backwards compatibility reasons and will be
+ removed in the future versions
+ */
+// TODO: t15955381 deprecate all the extras for backwards compatibility
+@protocol AKFAdvancedUIManager <AKFUIManager>
+@end
+
+/**
+ @protocol
+
+ This protocol is defined for backwards compatibility reasons and will be
+ removed in the future versions
+ */
+// TODO: t15955381 deprecate all the extras for backwards compatibility
+@protocol AKFAdvancedUIActionController <AKFActionController>
 @end
 
 NS_ASSUME_NONNULL_END

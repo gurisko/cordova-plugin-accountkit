@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "הקודם";
 "com_accountkit_country_code_title" = "בחר את המדינה שלך";
 "com_accountkit_phone_login_phone_number_placeholder" = "מספר";
+"com_accountkit_phone_login_text" = "הקש על %1$@ כדי לקבל אישור בהודעת טקסט מ-Account Kit המופעל על ידי פייסבוק. %2$@ משתמש בטכנולוגיה של פייסבוק כדי לעזור לך להתחבר, אך אינך זקוק לחשבון פייסבוק. ייתכן שתחויב בתשלום לפי תעריפי ההודעות והנתונים. <a href=\"%3$@\">למד איך פייסבוק משתמשת בפרטים שלך</a>.";
+"com_accountkit_phone_sending_sms" = "שולח הודעת טקסט עם הקוד";

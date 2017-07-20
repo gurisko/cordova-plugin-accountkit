@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "Назад";
 "com_accountkit_country_code_title" = "Выберите свою страну";
 "com_accountkit_phone_login_phone_number_placeholder" = "Номер";
+"com_accountkit_phone_login_text" = "Нажмите %1$@, чтобы получить SMS с подтверждением от Account Kit от Facebook. %2$@ использует технологию входа от Facebook, однако аккаунт Facebook вам не потребуется. Может взиматься плата за передачу сообщений и данных. <a href=\"%3$@\">как Facebook использует вашу информацию</a>.";
+"com_accountkit_phone_sending_sms" = "Отправка SMS с кодом";

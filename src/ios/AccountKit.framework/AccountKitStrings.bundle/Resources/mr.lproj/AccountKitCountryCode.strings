@@ -47,7 +47,7 @@
 "com_accountkit_country_code_BO" = "बोलिविया";
 "com_accountkit_country_code_BQ" = "बोनेअर, सीन्त युस्तशिअस आणि साबा";
 "com_accountkit_country_code_BR" = "ब्राझील";
-"com_accountkit_country_code_BS" = "बहामा";
+"com_accountkit_country_code_BS" = "बहामाज";
 "com_accountkit_country_code_BT" = "भूतान";
 "com_accountkit_country_code_BW" = "बोत्स्वाना";
 "com_accountkit_country_code_BY" = "बेलारूस";
@@ -132,7 +132,7 @@
 "com_accountkit_country_code_KM" = "कोमोरोस";
 "com_accountkit_country_code_KN" = "सेंट किट्स आणि नेविस";
 "com_accountkit_country_code_KP" = "उत्तर कोरिया";
-"com_accountkit_country_code_KR" = "साउथ कोरिया";
+"com_accountkit_country_code_KR" = "दक्षिण कोरिया";
 "com_accountkit_country_code_KW" = "कुवेत";
 "com_accountkit_country_code_KY" = "केमॅन बेटे";
 "com_accountkit_country_code_KZ" = "कझाकिस्तान";
@@ -160,7 +160,7 @@
 "com_accountkit_country_code_MO" = "मकाऊ";
 "com_accountkit_country_code_MP" = "उत्तरी मारियाना बेटे";
 "com_accountkit_country_code_MQ" = "मार्टीनिक";
-"com_accountkit_country_code_MR" = "मौरीतानिया";
+"com_accountkit_country_code_MR" = "मॉरिटानिया";
 "com_accountkit_country_code_MS" = "मॉंट्सेर्राट";
 "com_accountkit_country_code_MT" = "माल्टा";
 "com_accountkit_country_code_MU" = "मॉरिशस";
@@ -185,7 +185,7 @@
 "com_accountkit_country_code_PA" = "पनामा";
 "com_accountkit_country_code_PE" = "पेरु";
 "com_accountkit_country_code_PF" = "फ्रेंच पॉलिनेशिआ";
-"com_accountkit_country_code_PG" = "पापुआ न्यु गिनी";
+"com_accountkit_country_code_PG" = "पापुआ न्यु गिनिया";
 "com_accountkit_country_code_PH" = "फिलिपिन्स";
 "com_accountkit_country_code_PK" = "पाकिस्तान";
 "com_accountkit_country_code_PL" = "पोलंड";
@@ -252,5 +252,5 @@
 "com_accountkit_country_code_YE" = "येमेन";
 "com_accountkit_country_code_YT" = "मायोत";
 "com_accountkit_country_code_ZA" = "दक्षिण अफ्रिका";
-"com_accountkit_country_code_ZM" = "झांबिया";
+"com_accountkit_country_code_ZM" = "झाम्बिया";
 "com_accountkit_country_code_ZW" = "झिंबाब्वे";

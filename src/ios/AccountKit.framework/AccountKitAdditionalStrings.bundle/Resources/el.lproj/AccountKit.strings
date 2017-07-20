@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "Πίσω";
 "com_accountkit_country_code_title" = "Επιλέξτε τη χώρα σας";
 "com_accountkit_phone_login_phone_number_placeholder" = "Αριθμός";
+"com_accountkit_phone_login_text" = "Πατήστε %1$@ για να λάβετε ένα SMS επιβεβαίωσης από το Account Kit, που υποστηρίζεται από το Facebook. Το %2$@ χρησιμοποιεί την τεχνολογία του Facebook για να σας βοηθάει να συνδέεστε, αλλά δεν χρειάζεται να έχετε λογαριασμό στο Facebook. Ίσως ισχύσουν χρεώσεις μηνυμάτων και δεδομένων. <a href=\"%3$@\">Μάθετε πώς χρησιμοποιεί τα στοιχεία σας το Facebook</a>.";
+"com_accountkit_phone_sending_sms" = "Αποστολή SMS με τον κωδικό σας";

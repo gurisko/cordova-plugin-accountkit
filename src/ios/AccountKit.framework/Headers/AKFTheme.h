@@ -31,6 +31,29 @@ typedef NS_ENUM(NSUInteger, AKFHeaderTextType)
   AKFHeaderTextTypeAppName,
 };
 
+/**
+ AKFInputStyle
+
+ The style to use for inputs within the UI.
+ */
+typedef NS_ENUM(NSInteger, AKFInputStyle) {
+  AKFInputStyleDefault,
+  AKFInputStyleUnderline,
+  AKFInputStyleBlurLight,
+  AKFInputStyleBlurDark,
+};
+
+/**
+ AKFButtonTranslucentStyle
+
+ This style will be applied to buttons if `buttonBackgroundColor` is set to `[UIColor clearColor]`
+ */
+typedef NS_ENUM(NSInteger, AKFButtonTranslucentStyle) {
+  AKFButtonTranslucentStyleDefault,
+  AKFButtonTranslucentStyleBlurLight,
+  AKFButtonTranslucentStyleBlurDark,
+};
+
 extern const NSUInteger AKFHeaderTextTypeCount;
 
 /**
@@ -94,6 +117,7 @@ extern const NSUInteger AKFHeaderTextTypeCount;
 @property (nonatomic, copy) UIColor *buttonHighlightedBorderColor;
 @property (nonatomic, copy) UIColor *buttonHighlightedTextColor;
 @property (nonatomic, copy) UIColor *buttonTextColor;
+@property (nonatomic, assign) AKFButtonTranslucentStyle buttonTranslucenStyle;
 @property (nonatomic, assign) NSUInteger contentBodyLayoutWeight;
 @property (nonatomic, assign) NSUInteger contentBottomLayoutWeight;
 @property (nonatomic, assign) NSUInteger contentFooterLayoutWeight;
@@ -111,6 +135,7 @@ extern const NSUInteger AKFHeaderTextTypeCount;
 @property (nonatomic, copy) UIColor *iconColor;
 @property (nonatomic, copy) UIColor *inputBackgroundColor;
 @property (nonatomic, copy) UIColor *inputBorderColor;
+@property (nonatomic, assign) AKFInputStyle inputStyle;
 @property (nonatomic, copy) UIColor *inputTextColor;
 @property (nonatomic, assign) UIStatusBarStyle statusBarStyle;
 @property (nonatomic, copy) UIColor *textColor;

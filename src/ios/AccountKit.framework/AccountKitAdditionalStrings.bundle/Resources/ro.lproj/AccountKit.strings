@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "Înapoi";
 "com_accountkit_country_code_title" = "Selectează țara";
 "com_accountkit_phone_login_phone_number_placeholder" = "Număr";
+"com_accountkit_phone_login_text" = "Atinge %1$@ pentru a primi o confirmare prin SMS de la Account Kit oferit de Facebook. %2$@ folosește tehnologiile Facebook pentru a te ajuta să te conectezi, însă nu ai nevoie de un cont de Facebook. Este posibil să se aplice tarifele pentru mesaje și date. <a href=\"%3$@\">Află cum îți folosește Facebook datele</a>.";
+"com_accountkit_phone_sending_sms" = "Se trimite un SMS cu codul";

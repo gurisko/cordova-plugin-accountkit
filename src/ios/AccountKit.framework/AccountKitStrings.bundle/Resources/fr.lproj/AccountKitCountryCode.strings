@@ -51,7 +51,7 @@
 "com_accountkit_country_code_BT" = "Boutan";
 "com_accountkit_country_code_BW" = "Botswana";
 "com_accountkit_country_code_BY" = "Biélorussie";
-"com_accountkit_country_code_BZ" = "Belize";
+"com_accountkit_country_code_BZ" = "Bélize";
 "com_accountkit_country_code_CA" = "Canada";
 "com_accountkit_country_code_CD" = "République démocratique du Congo";
 "com_accountkit_country_code_CF" = "République Centre Africaine";
@@ -85,7 +85,7 @@
 "com_accountkit_country_code_FI" = "Finlande";
 "com_accountkit_country_code_FJ" = "Fidji";
 "com_accountkit_country_code_FK" = "Îles Malouines";
-"com_accountkit_country_code_FM" = "États Fédérés de Micronésie";
+"com_accountkit_country_code_FM" = "États fédérés de Micronésie";
 "com_accountkit_country_code_FO" = "Îles Féroé";
 "com_accountkit_country_code_FR" = "France";
 "com_accountkit_country_code_GA" = "Gabon";
@@ -163,7 +163,7 @@
 "com_accountkit_country_code_MR" = "Mauritanie";
 "com_accountkit_country_code_MS" = "Montserrat";
 "com_accountkit_country_code_MT" = "Malte";
-"com_accountkit_country_code_MU" = "Ile Maurice";
+"com_accountkit_country_code_MU" = "Île Maurice";
 "com_accountkit_country_code_MV" = "Maldives";
 "com_accountkit_country_code_MW" = "Malawi";
 "com_accountkit_country_code_MX" = "Mexique";
@@ -189,11 +189,11 @@
 "com_accountkit_country_code_PH" = "Philippines";
 "com_accountkit_country_code_PK" = "Pakistan";
 "com_accountkit_country_code_PL" = "Pologne";
-"com_accountkit_country_code_PM" = "Saint-Pierre et Miquelon";
-"com_accountkit_country_code_PR" = "Puerto Rico";
+"com_accountkit_country_code_PM" = "Saint-Pierre-et-Miquelon";
+"com_accountkit_country_code_PR" = "Porto Rico";
 "com_accountkit_country_code_PS" = "Palestine";
 "com_accountkit_country_code_PT" = "Portugal";
-"com_accountkit_country_code_PW" = "Palau";
+"com_accountkit_country_code_PW" = "Palaos";
 "com_accountkit_country_code_PY" = "Paraguay";
 "com_accountkit_country_code_QA" = "Qatar";
 "com_accountkit_country_code_RE" = "La Réunion";

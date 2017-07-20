@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "뒤로";
 "com_accountkit_country_code_title" = "국가 선택";
 "com_accountkit_phone_login_phone_number_placeholder" = "번호";
+"com_accountkit_phone_login_text" = "Facebook Account Kit로부터 SMS 확인 메시지를 받으려면 %1$@ 버튼을 누르세요. %2$@ 앱은 Facebook 기술을 통해 간편한 로그인 서비스를 제공합니다. 단, Facebook 계정은 필요하지 않습니다. 전송 시 메시지 및 데이터 요금이 부과될 수 있습니다. <a href=\"%3$@\">Facebook에서 사용자 정보를 어떻게 이용하는지 알아보세요</a>.";
+"com_accountkit_phone_sending_sms" = "코드가 포함된 SMS 전송 중"

@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "ย้อนกลับ";
 "com_accountkit_country_code_title" = "เลือกประเทศของคุณ";
 "com_accountkit_phone_login_phone_number_placeholder" = "หมายเลข";
+"com_accountkit_phone_login_text" = "แตะ %1$@ เพื่อรับการยืนยันทาง SMS จาก Account Kit สนับสนุนโดย Facebook %2$@ ใช้เทคโนโลยี Facebook เพื่อช่วยคุณในการเข้าสู่ระบบ แต่คุณไม่จำเป็นต้องมีบัญชีผู้ใช้ Facebook อาจมีค่าบริการสำหรับข้อความหรือข้อมูล <a href=\"%3$@\">ดูข้อมูลว่า Facebook ใช้ข้อมูลของคุณอย่างไรบ้าง</a>";
+"com_accountkit_phone_sending_sms" = "ส่ง SMS ที่มีรหัสของคุณ";

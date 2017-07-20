@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "Takaisin";
 "com_accountkit_country_code_title" = "Valitse maasi";
 "com_accountkit_phone_login_phone_number_placeholder" = "Numero";
+"com_accountkit_phone_login_text" = "Saat tekstiviestivahvistuksen Facebookin Account Kitiltä valitsemalla %1$@. %2$@ hyödyntää Facebook-teknologiaa pitäessään sinut sisäänkirjautuneena. Et kuitenkaan tarvitse Facebook-käyttäjätiliä. Viesteistä ja tiedonsiirrosta voidaan periä veloitus. <a href=\"%3$@\">Katso, miten Facebook käyttää tietojasi</a>.";
+"com_accountkit_phone_sending_sms" = "Koodin lähettäminen tekstiviestillä";

@@ -31,9 +31,16 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  AKFRequestAccountHandler
 
-  Callback that receives AccountKit account information.
+ Callback that receives AccountKit account information.
  */
 typedef void (^AKFRequestAccountHandler)(id<AKFAccount> _Nullable account, NSError *_Nullable error);
+
+/**
+ AKFLogoutHandler
+
+ Callback that receives result of logout request from server.
+ */
+typedef void (^AKFLogoutHandler)(BOOL success, NSError *_Nullable error);
 
 /**
   Primary interface for authenticating AccountKit accounts.
@@ -77,6 +84,11 @@ NS_DESIGNATED_INITIALIZER;
   Logs out currently logged in account.
  */
 - (void)logOut;
+
+/**
+  Logs out currently logged in account asynchronously.
+ */
+- (void)logOut:(nullable AKFLogoutHandler)handler;
 
 /**
   Asynchronously returns Account Kit account information

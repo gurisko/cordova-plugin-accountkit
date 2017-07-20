@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "Geri";
 "com_accountkit_country_code_title" = "Ülkeni Seç";
 "com_accountkit_phone_login_phone_number_placeholder" = "Numara";
+"com_accountkit_phone_login_text" = "Facebook'un desteğiyle Account Kit'ten SMS onayı almak için %1$@ düğmesine dokunun. %2$@, giriş yapmanıza yardımcı olmak için Facebook'un teknolojilerinden yararlanmaktadır, ancak bir Facebook hesabına ihtiyacınız yoktur. Mesaj ve veri ücretleri geçerli olabilir. <a href=\"%3$@\">Facebook\'un bilgilerinizi nasıl kullandığını öğrenin</a>.";
+"com_accountkit_phone_sending_sms" = "Kodunuzun yer aldığı bir SMS gönderme";

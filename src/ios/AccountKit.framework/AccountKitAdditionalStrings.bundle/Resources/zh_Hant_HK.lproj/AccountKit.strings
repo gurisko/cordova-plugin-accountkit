@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "返回";
 "com_accountkit_country_code_title" = "選擇您的國家／地區";
 "com_accountkit_phone_login_phone_number_placeholder" = "電話";
+"com_accountkit_phone_login_text" = "點按 %1$@ 以透過 Facebook Account Kit 取得確認短訊。%2$@ 會使用 Facebook 技術協助您登入，您無須擁有 Facebook 帳戶也能執行此操作。可能會產生短訊及數據傳輸費用。<a href=\"%3$@\">深入瞭解 Facebook 如何使用您的資料</a>。";
+"com_accountkit_phone_sending_sms" = "傳送含有代碼的短訊";

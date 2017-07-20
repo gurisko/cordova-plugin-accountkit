@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "Back";
 "com_accountkit_country_code_title" = "Select Your Country";
 "com_accountkit_phone_login_phone_number_placeholder" = "Number";
+"com_accountkit_phone_login_text" = "Tap %1$@ to get an SMS confirmation from Account Kit powered by Facebook. %2$@ uses Facebook technology to help you sign in, but you don't need a Facebook account. Message and data rates may apply. <a href=\"%3$@\">Learn how Facebook uses your info</a>.";
+"com_accountkit_phone_sending_sms" = "Sending an SMS with your code";

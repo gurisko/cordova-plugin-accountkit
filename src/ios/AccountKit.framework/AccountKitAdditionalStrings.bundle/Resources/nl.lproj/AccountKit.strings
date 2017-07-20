@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "Terug";
 "com_accountkit_country_code_title" = "Selecteer je land";
 "com_accountkit_phone_login_phone_number_placeholder" = "Nummer";
+"com_accountkit_phone_login_text" = "Tik op %1$@ om een sms-bevestiging te ontvangen van Account Kit van Facebook. %2$@ gebruikt Facebook-technologie om je te helpen bij het aanmelden, maar je hebt geen Facebook-account nodig. Mogelijk zijn bericht- en datatarieven van toepassing. <a href=\"%3$@\">Meer informatie over hoe Facebook je informatie gebruikt</a>.";
+"com_accountkit_phone_sending_sms" = "Een sms met je code versturen";

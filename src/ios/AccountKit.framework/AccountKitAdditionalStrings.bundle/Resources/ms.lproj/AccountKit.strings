@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "Undur";
 "com_accountkit_country_code_title" = "Pilih Negara Anda";
 "com_accountkit_phone_login_phone_number_placeholder" = "Nombor";
+"com_accountkit_phone_login_text" = "Ketik %1$@ untuk mendapatkan pengesahan SMS daripada Kit Akaun yang dikuasakan oleh Facebook. %2$@ menggunakan teknologi Facebook untuk membantu anda mendaftar masuk, tetapi anda tidak memerlukan akaun Facebook. Kadar mesej dan data boleh dikenakan. <a href=\"%3$@\">Ketahui cara Facebook menggunakan maklumat anda</a>.";
+"com_accountkit_phone_sending_sms" = "Menghantar SMS menggunakan kod anda";

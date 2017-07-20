@@ -36,9 +36,14 @@
 @property (nonatomic, copy) NSString *defaultCountryCode;
 
 /**
-  Specifies if the app supports sending codes to Facebook (as an SMS alternative)
-*/
-@property (nonatomic) BOOL enableSendToFacebook;
+ Specifies if the app supports sending codes to Facebook (as an SMS alternative)
+ */
+@property (nonatomic, assign) BOOL enableSendToFacebook;
+
+/**
+ Specifies if the app supports receiving a phone call back for codes (as an SMS alternative)
+ */
+@property (nonatomic, assign) BOOL enableGetACall;
 
 /**
   List of country codes to allow.

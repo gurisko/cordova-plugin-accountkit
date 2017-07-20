@@ -79,6 +79,11 @@ typedef NS_ENUM(NSUInteger, AKFLoginFlowState)
     Resend code screen is being entered
    */
   AKFLoginFlowStateResendCode,
+
+  /**
+   Country code screen is being entered
+   */
+  AKFLoginFlowStateCountryCode,
 };
 
 extern const NSUInteger AKFLoginFlowStateCount;

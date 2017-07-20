@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "ফিরুন";
 "com_accountkit_country_code_title" = "আপনার দেশ নির্বাচন করুন";
 "com_accountkit_phone_login_phone_number_placeholder" = "নম্বর";
+"com_accountkit_phone_login_text" = "Facebook পরিচালিত Account Kit থেকে একটি নিশ্চিতকরণ এসএমএস পেতে %1$@ -এ আলতো চাপ দিন৷ আপনাকে সাইন ইন করাতে %2$@, Facebook এর প্রযুক্তি ব্যবহার করে, কিন্তু তার জন্য আপনার কোনো Facebook অ্যাকাউন্টের প্রয়োজন নেই৷ বার্তা এবং ডেটা রেট প্রযোজ্য হতে পারে। <a href=\"%3$@\">Facebook আপনার তথ্য কিভাবে ব্যবহার করে তা জানুন</a>|";
+"com_accountkit_phone_sending_sms" = "আপনার কোড সহ একটি এসএমএস পাঠানো হচ্ছে";

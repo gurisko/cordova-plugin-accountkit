@@ -104,7 +104,7 @@
 "com_accountkit_country_code_GR" = "กรีซ";
 "com_accountkit_country_code_GT" = "กัวเตมาลา";
 "com_accountkit_country_code_GU" = "กวม";
-"com_accountkit_country_code_GW" = "กินีบิสเซา";
+"com_accountkit_country_code_GW" = "กินี-บิสเซา";
 "com_accountkit_country_code_GY" = "กายอานา";
 "com_accountkit_country_code_HK" = "ฮ่องกง";
 "com_accountkit_country_code_HN" = "ฮอนดูรัส";
@@ -122,7 +122,7 @@
 "com_accountkit_country_code_IS" = "ไอซ์แลนด์";
 "com_accountkit_country_code_IT" = "อิตาลี";
 "com_accountkit_country_code_JE" = "เจอร์ซีย์";
-"com_accountkit_country_code_JM" = "จาไมก้า";
+"com_accountkit_country_code_JM" = "จาไมกา";
 "com_accountkit_country_code_JO" = "จอร์แดน";
 "com_accountkit_country_code_JP" = "ญี่ปุ่น";
 "com_accountkit_country_code_KE" = "เคนยา";
@@ -209,7 +209,7 @@
 "com_accountkit_country_code_SG" = "สิงคโปร์";
 "com_accountkit_country_code_SH" = "เซนต์เฮเลนา";
 "com_accountkit_country_code_SI" = "สโลวีเนีย";
-"com_accountkit_country_code_SK" = "สโลวาเกีย";
+"com_accountkit_country_code_SK" = "สโลวะเกีย";
 "com_accountkit_country_code_SL" = "เซียร์ราลีโอน";
 "com_accountkit_country_code_SM" = "ซานมารีโน";
 "com_accountkit_country_code_SN" = "เซเนกัล";
@@ -227,7 +227,7 @@
 "com_accountkit_country_code_TH" = "ไทย";
 "com_accountkit_country_code_TJ" = "ทาจิกิสถาน";
 "com_accountkit_country_code_TK" = "โตเกเลา";
-"com_accountkit_country_code_TL" = "ติมอร์ตะวันออก";
+"com_accountkit_country_code_TL" = "ติมอร์-เลสเต";
 "com_accountkit_country_code_TM" = "เติร์กเมนิสถาน";
 "com_accountkit_country_code_TN" = "ตูนิเชีย";
 "com_accountkit_country_code_TO" = "ตองกา";
@@ -237,7 +237,7 @@
 "com_accountkit_country_code_TW" = "ไต้หวัน";
 "com_accountkit_country_code_TZ" = "แทนซาเนีย";
 "com_accountkit_country_code_UA" = "ยูเครน";
-"com_accountkit_country_code_UG" = "อูกันดา";
+"com_accountkit_country_code_UG" = "ยูกันดา";
 "com_accountkit_country_code_US" = "สหรัฐอเมริกา";
 "com_accountkit_country_code_UY" = "อุรุกวัย";
 "com_accountkit_country_code_UZ" = "อุซเบกิสถาน";

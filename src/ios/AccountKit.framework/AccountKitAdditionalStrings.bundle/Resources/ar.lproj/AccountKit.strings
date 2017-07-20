@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "رجوع";
 "com_accountkit_country_code_title" = "حدد بلدك";
 "com_accountkit_phone_login_phone_number_placeholder" = "الرقم";
+"com_accountkit_phone_login_text" = "اضغط على %1$@ للحصول على رسالة SMS تأكيدية من Account Kit برعاية فيسبوك. يستخدم %2$@ تقنية فيسبوك لمساعدتك على تسجيل الدخول، لكن دون الحاجة إلى حساب فيسبوك. تُطبق أسعار الرسائل وبيانات الاتصال. <a href=\"%3$@\">تعرف على المزيد</a>.";
+"com_accountkit_phone_sending_sms" = "إرسال رسالة SMS تحتوي على الرمز";

@@ -22,3 +22,5 @@
 "com_accountkit_button_back" = "Quay lại";
 "com_accountkit_country_code_title" = "Chọn quốc gia của bạn";
 "com_accountkit_phone_login_phone_number_placeholder" = "Số";
+"com_accountkit_phone_login_text" = "Nhấn vào %1$@ để nhận xác nhận qua SMS từ Account Kit do Facebook cung cấp. %2$@ sử dụng công nghệ Facebook để giúp bạn đăng nhập, nhưng bạn không cần có tài khoản Facebook. Bạn có thể phải chịu cước tin nhắn và dữ liệu. <a href=\"%3$@\">Tìm hiểu cách Facebook sử dụng thông tin của bạn</a>.";
+"com_accountkit_phone_sending_sms" = "Gửi SMS chứa mã";

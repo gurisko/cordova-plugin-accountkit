@@ -45,7 +45,7 @@
 "com_accountkit_country_code_BM" = "百慕大";
 "com_accountkit_country_code_BN" = "文莱";
 "com_accountkit_country_code_BO" = "玻利维亚";
-"com_accountkit_country_code_BQ" = "荷兰加勒比区";
+"com_accountkit_country_code_BQ" = "博内尔，圣尤斯特歇斯和沙巴";
 "com_accountkit_country_code_BR" = "巴西";
 "com_accountkit_country_code_BS" = "巴哈马";
 "com_accountkit_country_code_BT" = "不丹";
@@ -88,9 +88,9 @@
 "com_accountkit_country_code_FM" = "密克罗尼西亚联邦";
 "com_accountkit_country_code_FO" = "法罗群岛";
 "com_accountkit_country_code_FR" = "法国";
-"com_accountkit_country_code_GA" = "加蓬共和国";
+"com_accountkit_country_code_GA" = "加蓬";
 "com_accountkit_country_code_GB" = "英国";
-"com_accountkit_country_code_GD" = "格林纳达岛";
+"com_accountkit_country_code_GD" = "格林纳达";
 "com_accountkit_country_code_GE" = "格鲁吉亚";
 "com_accountkit_country_code_GF" = "法属圭亚那";
 "com_accountkit_country_code_GG" = "根西岛";
@@ -159,9 +159,9 @@
 "com_accountkit_country_code_MN" = "蒙古";
 "com_accountkit_country_code_MO" = "澳门";
 "com_accountkit_country_code_MP" = "北马里亚纳群岛";
-"com_accountkit_country_code_MQ" = "马提尼岛";
+"com_accountkit_country_code_MQ" = "马提尼克岛";
 "com_accountkit_country_code_MR" = "毛里塔尼亚";
-"com_accountkit_country_code_MS" = "蒙特塞拉特岛";
+"com_accountkit_country_code_MS" = "蒙塞拉特岛";
 "com_accountkit_country_code_MT" = "马耳他";
 "com_accountkit_country_code_MU" = "毛里求斯";
 "com_accountkit_country_code_MV" = "马尔代夫";
@@ -172,7 +172,7 @@
 "com_accountkit_country_code_NA" = "纳米比亚";
 "com_accountkit_country_code_NC" = "新喀里多尼亚";
 "com_accountkit_country_code_NE" = "尼日尔";
-"com_accountkit_country_code_NF" = "诺福克群岛";
+"com_accountkit_country_code_NF" = "诺福克岛";
 "com_accountkit_country_code_NG" = "尼日利亚";
 "com_accountkit_country_code_NI" = "尼加拉瓜";
 "com_accountkit_country_code_NL" = "荷兰";
@@ -189,11 +189,11 @@
 "com_accountkit_country_code_PH" = "菲律宾";
 "com_accountkit_country_code_PK" = "巴基斯坦";
 "com_accountkit_country_code_PL" = "波兰";
-"com_accountkit_country_code_PM" = "法属圣皮埃尔和密克隆岛";
-"com_accountkit_country_code_PR" = "波多黎哥";
+"com_accountkit_country_code_PM" = "圣皮埃尔和密克隆";
+"com_accountkit_country_code_PR" = "波多黎各";
 "com_accountkit_country_code_PS" = "巴勒斯坦";
 "com_accountkit_country_code_PT" = "葡萄牙";
-"com_accountkit_country_code_PW" = "帛琉";
+"com_accountkit_country_code_PW" = "帕劳";
 "com_accountkit_country_code_PY" = "巴拉圭";
 "com_accountkit_country_code_QA" = "卡塔尔";
 "com_accountkit_country_code_RE" = "留尼汪";
@@ -202,7 +202,7 @@
 "com_accountkit_country_code_RU" = "俄罗斯";
 "com_accountkit_country_code_RW" = "卢旺达";
 "com_accountkit_country_code_SA" = "沙特阿拉伯";
-"com_accountkit_country_code_SB" = "所罗门岛屿";
+"com_accountkit_country_code_SB" = "所罗门群岛";
 "com_accountkit_country_code_SC" = "塞舌尔";
 "com_accountkit_country_code_SD" = "苏丹";
 "com_accountkit_country_code_SE" = "瑞典";
@@ -216,7 +216,7 @@
 "com_accountkit_country_code_SO" = "索马里";
 "com_accountkit_country_code_SR" = "苏里南";
 "com_accountkit_country_code_SS" = "南苏丹";
-"com_accountkit_country_code_ST" = "圣多美和普林西比民主共和国";
+"com_accountkit_country_code_ST" = "圣多美和普林西比";
 "com_accountkit_country_code_SV" = "萨尔瓦多";
 "com_accountkit_country_code_SX" = "圣马丁岛";
 "com_accountkit_country_code_SY" = "叙利亚";

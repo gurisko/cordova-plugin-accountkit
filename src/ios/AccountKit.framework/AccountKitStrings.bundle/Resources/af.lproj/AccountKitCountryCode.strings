@@ -55,14 +55,14 @@
 "com_accountkit_country_code_CA" = "Kanada";
 "com_accountkit_country_code_CD" = "Demokratiese Republiek van die Kongo";
 "com_accountkit_country_code_CF" = "Sentraal-Afrikaanse Republiek";
-"com_accountkit_country_code_CG" = "Republiek van die Kongo";
+"com_accountkit_country_code_CG" = "Republiek die Kongo";
 "com_accountkit_country_code_CH" = "Switserland";
 "com_accountkit_country_code_CI" = "Ivoorkus";
 "com_accountkit_country_code_CK" = "Cookeilande";
 "com_accountkit_country_code_CL" = "Chili";
 "com_accountkit_country_code_CM" = "Kameroen";
 "com_accountkit_country_code_CN" = "Sjina";
-"com_accountkit_country_code_CO" = "Kolombië";
+"com_accountkit_country_code_CO" = "Colombië";
 "com_accountkit_country_code_CR" = "Costa Rica";
 "com_accountkit_country_code_CU" = "Kuba";
 "com_accountkit_country_code_CV" = "Kaap Verdiese Eilande";
@@ -72,7 +72,7 @@
 "com_accountkit_country_code_DE" = "Duitsland";
 "com_accountkit_country_code_DJ" = "Djiboeti";
 "com_accountkit_country_code_DK" = "Denemarke";
-"com_accountkit_country_code_DM" = "Dominika";
+"com_accountkit_country_code_DM" = "Dominica";
 "com_accountkit_country_code_DO" = "Dominikaanse Republiek";
 "com_accountkit_country_code_DZ" = "Algerië";
 "com_accountkit_country_code_EC" = "Ecuador";
@@ -208,7 +208,7 @@
 "com_accountkit_country_code_SE" = "Swede";
 "com_accountkit_country_code_SG" = "Singapoer";
 "com_accountkit_country_code_SH" = "Sint Helena";
-"com_accountkit_country_code_SI" = "Slovenië";
+"com_accountkit_country_code_SI" = "Slowenië";
 "com_accountkit_country_code_SK" = "Slowakye";
 "com_accountkit_country_code_SL" = "Sierra Leone";
 "com_accountkit_country_code_SM" = "San Marino";
