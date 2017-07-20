@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-accountkit",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Cordova AccountKit Plugin",
   "cordova": {
     "id": "cordova-plugin-accountkit",
