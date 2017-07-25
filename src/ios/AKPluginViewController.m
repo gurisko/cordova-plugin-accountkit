@@ -68,6 +68,14 @@
  @param state the state param value that was passed in at the beginning of the flow
  */
 - (void)viewController:(UIViewController<AKFViewController> *)viewController didCompleteLoginWithAuthorizationCode:(NSString *)code state:(NSString *)state {
+  NSDictionary* response = @{
+                             @"callbackId": self.callbackId,
+                             @"data": code,
+                             @"name": @"didCompleteLoginWithAuthorizationCode"
+                             };
+  [[NSNotificationCenter defaultCenter] postNotificationName:@"AccountKitDone"
+                                                      object:nil
+                                                    userInfo:response];
 }
 
 /*!
@@ -79,9 +87,9 @@
  */
 - (void)viewController:(UIViewController<AKFViewController> *)viewController didCompleteLoginWithAccessToken:(id<AKFAccessToken>)accessToken state:(NSString *)state {
   NSDictionary* response = @{
-                             @"success": @YES,
+                             @"callbackId": self.callbackId,
                              @"data": accessToken,
-                             @"callbackId": self.callbackId
+                             @"name": @"didCompleteLoginWithAccessToken"
                              };
   [[NSNotificationCenter defaultCenter] postNotificationName:@"AccountKitDone"
                                                       object:nil
@@ -97,9 +105,9 @@
 - (void)viewController:(UIViewController<AKFViewController> *)viewController
       didFailWithError:(NSError *)error {
   NSDictionary* response = @{
-                             @"success": @NO,
-                             @"error": [error localizedDescription],
-                             @"callbackId": self.callbackId
+                             @"callbackId": self.callbackId,
+                             @"data": [error localizedDescription],
+                             @"name": @"didFailWithError"
                              };
   [[NSNotificationCenter defaultCenter] postNotificationName:@"AccountKitDone"
                                                       object:nil
@@ -113,9 +121,9 @@
  */
 - (void)viewControllerDidCancel:(UIViewController<AKFViewController> *)viewController {
   NSDictionary* response = @{
-                             @"success": @NO,
-                             @"error": @"User cancelled",
-                             @"callbackId": self.callbackId
+                             @"callbackId": self.callbackId,
+                             @"data": @"User cancelled",
+                             @"name": @"didFailWithError"
                              };
   [[NSNotificationCenter defaultCenter] postNotificationName:@"AccountKitDone"
                                                       object:nil

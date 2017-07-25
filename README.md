@@ -110,6 +110,8 @@ AccountKitPlugin.logout()
 
 ### Get account
 
+This method only works when login method was called with `{ useAccessToken: true }`.
+
 ```javascript
 AccountKitPlugin.getAccount(Function success, Function failure)
 ```
