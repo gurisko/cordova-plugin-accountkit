@@ -76,7 +76,8 @@ Success function returns an Object like:
 If you do not use access tokens an Object looks like:
 
 	{
-		code: "<long string>"
+		code: "<long string>",
+		state: "<string>"
 	}
 
 Failure function returns an error String.
@@ -111,7 +112,8 @@ Success function returns an Object like:
 If you do not use access tokens an Object looks like:
 
 	{
-		code: "<long string>"
+		code: "<long string>",
+		state: "<string>"
 	}
 
 Failure function returns an error String.

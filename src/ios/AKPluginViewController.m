@@ -70,7 +70,10 @@
 - (void)viewController:(UIViewController<AKFViewController> *)viewController didCompleteLoginWithAuthorizationCode:(NSString *)code state:(NSString *)state {
   NSDictionary* response = @{
                              @"callbackId": self.callbackId,
-                             @"data": code,
+                             @"data": @{
+                                 @"code": code,
+                                 @"state": state
+                                 },
                              @"name": @"didCompleteLoginWithAuthorizationCode"
                              };
   [[NSNotificationCenter defaultCenter] postNotificationName:@"AccountKitDone"

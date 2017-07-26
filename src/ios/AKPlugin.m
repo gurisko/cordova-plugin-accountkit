@@ -32,7 +32,6 @@
   }
 
   _responseType = useAccessToken ? AKFResponseTypeAccessToken: AKFResponseTypeAuthorizationCode;
-  NSLog(useAccessToken ? @"AKFResponseTypeAccessToken": @"AKFResponseTypeAuthorizationCode")
   _accountKit = [[AKFAccountKit alloc] initWithResponseType:_responseType];
 
   AKPluginViewController *vc = [self _prepareViewController];
@@ -112,11 +111,8 @@
 
   if ([name isEqualToString:@"didCompleteLoginWithAuthorizationCode"]) {
 
-    NSMutableDictionary *transformed = [NSMutableDictionary dictionary];
-    transformed[@"code"] = [response objectForKey:@"data"];
-
     result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
-                           messageAsDictionary:transformed];
+                           messageAsDictionary:[response objectForKey:@"data"]];
 
   } else if ([name isEqualToString:@"didCompleteLoginWithAccessToken"]) {
 
