@@ -3,15 +3,13 @@
 
 
 @implementation AKPlugin {
+  AKFResponseType _responseType;
   AKFAccountKit *_accountKit;
   AKFTheme *_theme;
 }
 
 - (void)pluginInitialize {
-  if (_accountKit == nil) {
-    _accountKit = [[AKFAccountKit alloc] initWithResponseType:AKFResponseTypeAccessToken];
-    _theme = [AKFTheme defaultTheme];
-  }
+  _theme = [AKFTheme defaultTheme];
   [[NSNotificationCenter defaultCenter] addObserver:self
                                            selector:@selector(processResponse:)
                                                name:@"AccountKitDone"
@@ -24,6 +22,7 @@
   NSDictionary *options = [command.arguments objectAtIndex:0];
   AKFPhoneNumber *preFillPhoneNumber = nil;
 
+  BOOL useAccessToken = [[options objectForKey:@"useAccessToken"] boolValue];
   NSString *defaultCountryCode = [options objectForKey:@"defaultCountryCode"];
   BOOL facebookNotificationsEnabled = [[options objectForKey:@"facebookNotificationsEnabled"] boolValue];
   NSArray *initialPhoneNumber = [options objectForKey:@"initialPhoneNumber"];
@@ -31,6 +30,9 @@
     preFillPhoneNumber = [[AKFPhoneNumber alloc]initWithCountryCode:[initialPhoneNumber objectAtIndex:0]
                                                         phoneNumber:[initialPhoneNumber objectAtIndex:1]];
   }
+
+  _responseType = useAccessToken ? AKFResponseTypeAccessToken: AKFResponseTypeAuthorizationCode;
+  _accountKit = [[AKFAccountKit alloc] initWithResponseType:_responseType];
 
   AKPluginViewController *vc = [self _prepareViewController];
   [vc loginWithPhoneNumber:preFillPhoneNumber
@@ -42,9 +44,13 @@
 - (void)loginWithEmail:(CDVInvokedUrlCommand *)command {
   NSDictionary *options = [command.arguments objectAtIndex:0];
 
+  BOOL useAccessToken = [[options objectForKey:@"useAccessToken"] boolValue];
   NSString *defaultCountryCode = [options objectForKey:@"defaultCountryCode"];
   BOOL facebookNotificationsEnabled = [[options objectForKey:@"facebookNotificationsEnabled"] boolValue];
   NSString *initialEmail = [options objectForKey:@"initialEmail"];
+
+  _responseType = useAccessToken ? AKFResponseTypeAccessToken: AKFResponseTypeAuthorizationCode;
+  _accountKit = [[AKFAccountKit alloc] initWithResponseType:_responseType];
 
   AKPluginViewController *vc = [self _prepareViewController];
   [vc loginWithEmailAddress:initialEmail
@@ -55,13 +61,6 @@
 
 - (void)getAccount:(CDVInvokedUrlCommand *)command {
   id<AKFAccessToken> accessToken = [_accountKit currentAccessToken];
-
-  if (accessToken == nil) {
-    [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR
-                                                             messageAsString:@"Access token not found"]
-                                callbackId:command.callbackId];
-    return;
-  }
 
   [_accountKit requestAccount:^(id<AKFAccount> account, NSError *error) {
     CDVPluginResult *result = nil;
@@ -106,13 +105,25 @@
 - (void)processResponse:(NSNotification *)notification {
   CDVPluginResult *result;
   NSDictionary *response = [notification userInfo];
+  NSString *name = [response objectForKey:@"name"];
 
-  if ([[response objectForKey:@"success"] boolValue]) {
+  NSLog(@"%@", name);
+
+  if ([name isEqualToString:@"didCompleteLoginWithAuthorizationCode"]) {
+
+    result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
+                           messageAsDictionary:[response objectForKey:@"data"]];
+
+  } else if ([name isEqualToString:@"didCompleteLoginWithAccessToken"]) {
+
     result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK
                            messageAsDictionary:[self formatAccessToken:[response objectForKey:@"data"]]];
-  } else {
+
+  } else if ([name isEqualToString:@"didFailWithError"]) {
+
     result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR
-                               messageAsString:[response objectForKey:@"error"]];
+                               messageAsString:[response objectForKey:@"data"]];
+
   }
 
   [self.commandDelegate sendPluginResult:result
@@ -133,7 +144,9 @@
 }
 
 - (void)dealloc {
-  [[NSNotificationCenter defaultCenter] removeObserver:self];
+  [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                  name:@"AccountKitDone"
+                                                object:nil];
 }
 
 @end
