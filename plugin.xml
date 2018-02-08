@@ -2,13 +2,13 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     id="cordova-plugin-accountkit"
-    version="1.3.0">
+    version="1.3.1">
     <name>Cordova AccountKit</name>
     <description></description>
     <license>MIT</license>
     <keywords></keywords>
-    <repo>https://github.com/gurisko/cordova-plugin-accountkit.git</repo>
-    <issue>https://github.com/gurisko/cordova-plugin-accountkit/issues</issue>
+    <repo>https://github.com/uxap/cordova-plugin-accountkit.git</repo>
+    <issue>https://github.com/uxap/cordova-plugin-accountkit/issues</issue>
 
     <preference name="APP_ID" />
     <preference name="APP_NAME" />
@@ -16,7 +16,7 @@
 
     <engines>
         <engine name="cordova-android" version=">=3.5.0" />
-        <engine name="cordova-ios" version=">=3.5.0" />
+        <engine name="cordova-ios" version=">=4.3.0" />
     </engines>
 
     <!-- android -->
@@ -61,7 +61,7 @@
             </activity>
         </config-file>
 
-        <framework src="com.facebook.android:account-kit-sdk:4.24.+"/>
+        <framework src="com.facebook.android:account-kit-sdk:4.+"/>
 
         <source-file src="src/android/AccountKitPlugin.java" target-dir="src/org/apache/cordova/facebook" />
     </platform>
@@ -111,8 +111,9 @@
             <string>0</string>
         </config-file>
 
-        <!-- Facebook framework -->
-        <framework src="src/ios/AccountKit.framework" custom="true" />
-        <resource-file src="src/ios/AccountKitStrings.bundle" custom="true" />
+        <!-- AccountKit framework -->
+        <framework src="AccountKit" type="podspec" spec="~> 4" />
+
+
     </platform>
 </plugin>
