@@ -17,7 +17,28 @@
     <engines>
         <engine name="cordova-android" version=">=3.5.0" />
         <engine name="cordova-ios" version=">=4.3.0" />
+        <engine name="cordova-browser" version=">=4.1.0" />
     </engines>
+
+    <!-- browser -->
+    <platform name="browser">
+        <config-file target="config.xml" parent="/*">
+            <feature name="AccountKitPlugin">
+                <param name="browser-package" value="AccountKitPlugin" />
+                <param name="fb-app-name" value="$APP_NAME" />
+                <param name="fb-app-id" value="$APP_ID" />
+                <param name="client-token" value="$CLIENT_TOKEN" />
+            </feature>
+        </config-file>
+
+        <js-module src="www/plugin.js" name="plugin">
+            <runs/>
+            <clobbers target="AccountKitPlugin" />
+        </js-module>
+        <js-module src="src/browser/AccountKitPluginProxy.js" name="AccountKitPluginProxy">
+            <runs />
+        </js-module>
+    </platform>
 
     <!-- android -->
     <platform name="android">
