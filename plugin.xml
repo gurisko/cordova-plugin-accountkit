@@ -7,8 +7,8 @@
     <description></description>
     <license>MIT</license>
     <keywords></keywords>
-    <repo>https://github.com/uxap/cordova-plugin-accountkit.git</repo>
-    <issue>https://github.com/uxap/cordova-plugin-accountkit/issues</issue>
+    <repo>https://github.com/gurisko/cordova-plugin-accountkit.git</repo>
+    <issue>https://github.com/gurisko/cordova-plugin-accountkit/issues</issue>
 
     <preference name="APP_ID" />
     <preference name="APP_NAME" />
