@@ -17,7 +17,8 @@ The Apache Cordova wrapper around the Facebook [AccountKit](https://www.accountk
 cordova plugin add cordova-plugin-accountkit --save \
    --variable APP_ID="123456789" \
    --variable APP_NAME="myApplication" \
-   --variable CLIENT_TOKEN="abcdefghijklmnopqrstuvwxyz"
+   --variable CLIENT_TOKEN="abcdefghijklmnopqrstuvwxyz" \
+   --variable API_VERSION="v1.1"
 ```
 
 If you need to change your `APP_ID` after installation, it's recommended that you remove and then re-add the plugin as above. Note that changes to the `APP_ID` value in your `config.xml` file will *not* be propagated to the individual platform builds.

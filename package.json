@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-accountkit",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "Cordova AccountKit Plugin",
   "cordova": {
     "id": "cordova-plugin-accountkit",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/uxap/cordova-plugin-accountkit"
+    "url": "https://github.com/gurisko/cordova-plugin-accountkit"
   },
   "keywords": [
     "cordova",
@@ -23,5 +23,11 @@
     "ecosystem:cordova",
     "cordova-android",
     "cordova-ios"
-  ]
+  ],
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "replace": "^0.3.0",
+    "xml2js": "^0.4.19"
+  }
 }
