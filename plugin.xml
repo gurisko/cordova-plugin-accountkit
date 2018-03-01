@@ -65,7 +65,7 @@
         </config-file>
 
         <source-file src="src/android/accountkit.xml" target-dir="res/values" />
-        <config-file target="res/values/accountkit.xml" parent="/*">
+        <config-file target="*/res/values/accountkit.xml" parent="/*">
             <string name="fb_app_name">$APP_NAME</string>
             <string name="fb_app_id">$APP_ID</string>
             <string name="accountkit_token">$CLIENT_TOKEN</string>
