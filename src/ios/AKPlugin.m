@@ -60,8 +60,19 @@
 }
 
 - (void)getAccount:(CDVInvokedUrlCommand *)command {
+  if (_accountKit == nil) {
+      _accountKit = [[AKFAccountKit alloc] initWithResponseType:AKFResponseTypeAccessToken];
+  }
   id<AKFAccessToken> accessToken = [_accountKit currentAccessToken];
 
+  if (accessToken == nil) {
+      CDVPluginResult *result = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR
+                                                  messageAsString:@"No Access token present"];
+      [self.commandDelegate sendPluginResult:result callbackId:command.callbackId];
+      _accountKit = nil;
+      return;
+  }
+  
   [_accountKit requestAccount:^(id<AKFAccount> account, NSError *error) {
     CDVPluginResult *result = nil;
     if (error) {
