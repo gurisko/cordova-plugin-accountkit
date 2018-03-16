@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     id="cordova-plugin-accountkit"
-    version="1.3.0">
+    version="1.3.1">
     <name>Cordova AccountKit</name>
     <description></description>
     <license>MIT</license>
@@ -13,11 +13,37 @@
     <preference name="APP_ID" />
     <preference name="APP_NAME" />
     <preference name="CLIENT_TOKEN" />
+    <preference name="API_VERSION" />
 
     <engines>
         <engine name="cordova-android" version=">=3.5.0" />
-        <engine name="cordova-ios" version=">=3.5.0" />
+        <engine name="cordova-ios" version=">=4.3.0" />
     </engines>
+
+    <!-- browser -->
+    <platform name="browser">
+        <config-file target="config.xml" parent="/*">
+          <feature name="AccountKitPlugin">
+              <param name="browser-package" value="AccountKitPlugin" />
+          </feature>
+        </config-file>
+
+        <js-module src="src/browser/AccountKitPluginProxy.js" name="AccountKitPluginProxy">
+          <runs/>
+          <clobbers target="AccountKitPlugin" />
+        </js-module>
+
+        <js-module src="src/browser/AccountKitOnInteractive.js" name="AccountKit_OnInteractive">
+          <runs/>
+          <clobbers target="AccountKit_OnInteractive" />
+        </js-module>
+
+        <js-module src="src/browser/AccountKitSDK.js" name="AccountKitSDK">
+          <runs/>
+        </js-module>
+
+        <hook type="after_plugin_add" src="src/browser/afterInstall.js"/>
+    </platform>
 
     <!-- android -->
     <platform name="android">
@@ -39,7 +65,7 @@
         </config-file>
 
         <source-file src="src/android/accountkit.xml" target-dir="res/values" />
-        <config-file target="res/values/accountkit.xml" parent="/*">
+        <config-file target="*/res/values/accountkit.xml" parent="/*">
             <string name="fb_app_name">$APP_NAME</string>
             <string name="fb_app_id">$APP_ID</string>
             <string name="accountkit_token">$CLIENT_TOKEN</string>
@@ -61,7 +87,7 @@
             </activity>
         </config-file>
 
-        <framework src="com.facebook.android:account-kit-sdk:4.24.+"/>
+        <framework src="com.facebook.android:account-kit-sdk:4.+"/>
 
         <source-file src="src/android/AccountKitPlugin.java" target-dir="src/org/apache/cordova/facebook" />
     </platform>
@@ -111,8 +137,9 @@
             <string>0</string>
         </config-file>
 
-        <!-- Facebook framework -->
-        <framework src="src/ios/AccountKit.framework" custom="true" />
-        <resource-file src="src/ios/AccountKitStrings.bundle" custom="true" />
+        <!-- AccountKit framework -->
+        <framework src="AccountKit" type="podspec" spec="~> 4" />
+
+
     </platform>
 </plugin>

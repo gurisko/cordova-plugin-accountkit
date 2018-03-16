@@ -1,12 +1,13 @@
 {
   "name": "cordova-plugin-accountkit",
-  "version": "1.3.0",
+  "version": "1.4.2",
   "description": "Cordova AccountKit Plugin",
   "cordova": {
     "id": "cordova-plugin-accountkit",
     "platforms": [
       "ios",
-      "android"
+      "android",
+      "browser"
     ]
   },
   "repository": {
@@ -22,5 +23,11 @@
     "ecosystem:cordova",
     "cordova-android",
     "cordova-ios"
-  ]
+  ],
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "path": "^0.12.7",
+    "replace": "^0.3.0",
+    "xml2js": "^0.4.19"
+  }
 }
