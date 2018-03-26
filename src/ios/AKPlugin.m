@@ -26,11 +26,9 @@
   NSString *defaultCountryCode = [options objectForKey:@"defaultCountryCode"];
   BOOL facebookNotificationsEnabled = [[options objectForKey:@"facebookNotificationsEnabled"] boolValue];
   NSArray *initialPhoneNumber = [options objectForKey:@"initialPhoneNumber"];
-  if ([initialPhoneNumber count] == 2) {
-    preFillPhoneNumber = [[AKFPhoneNumber alloc]initWithCountryCode:[initialPhoneNumber objectAtIndex:0]
-                                                        phoneNumber:[initialPhoneNumber objectAtIndex:1]];
-  }
-
+  preFillPhoneNumber = [[AKFPhoneNumber alloc]initWithCountryCode:defaultCountryCode
+                                                      phoneNumber:initialPhoneNumber];
+  
   _responseType = useAccessToken ? AKFResponseTypeAccessToken: AKFResponseTypeAuthorizationCode;
   _accountKit = [[AKFAccountKit alloc] initWithResponseType:_responseType];
 
