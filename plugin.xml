@@ -87,7 +87,7 @@
             </activity>
         </config-file>
 
-        <framework src="com.facebook.android:account-kit-sdk:4.+"/>
+        <framework src="com.facebook.android:account-kit-sdk:5.+"/>
 
         <source-file src="src/android/AccountKitPlugin.java" target-dir="src/org/apache/cordova/facebook" />
     </platform>
