@@ -28,7 +28,7 @@ import com.facebook.accountkit.ui.LoginType;
 
 public class AccountKitPlugin extends CordovaPlugin {
   public static final String TAG = "AccountKitPlugin";
-  private static final int APP_REQUEST_CODE = 65537;
+  private static final int APP_REQUEST_CODE = 65500;
 
   public static final String LOGIN_WITH_PHONE_NUMBER = "loginWithPhoneNumber";
   public static final String LOGIN_WITH_EMAIL = "loginWithEmail";
